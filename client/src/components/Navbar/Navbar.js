@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () =>
   <ul className="nav nav-tabs">
     <li className={window.location.pathname === "/" ? "active" : ""}>
-      <Link to="/">Main</Link>
+      <Link to="/"></Link>
     </li>
     <li className={window.location.pathname === "/search" ? "active" : ""}>
       <Link to="/search">Search</Link>

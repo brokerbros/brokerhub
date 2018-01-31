@@ -20,8 +20,7 @@
     "client": "node scripts/start-client.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
-    "seed": "node scripts/seedDB.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "seed": "node scripts/seedDB.js"
   },
   "repository": {
     "type": "git",
