@@ -6,7 +6,7 @@ import Property from "./components/pages/Property";
 import Profile from "./components/pages/Profile";
 import Import from "./components/pages/Import";
 import Navbar from "./components/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
+import SideNav from "./components/SideNav/SideNav";
 
 class App extends Component {
   render() {
@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path="/property" component={Property} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/import" component={Import} />
-          <Footer />
+          <SideNav />
         </div>
       </Router>
     );
