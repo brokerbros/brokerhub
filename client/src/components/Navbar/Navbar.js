@@ -15,7 +15,7 @@ const Navbar = () =>
       <Link to="/property">Property</Link>
     </li>
     <li className={window.location.pathname === "/import" ? "active" : ""}>
-      <Link to="/import">Import</Link>
+      <Link to="/import">Import File</Link>
     </li>
     <li className={window.location.pathname === "/profile" ? "active" : ""}>
       <Link to="/profile">Profile</Link>

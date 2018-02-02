@@ -19,6 +19,7 @@
     "server": "node server.js",
     "client": "node scripts/start-client.js",
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js"
   },
