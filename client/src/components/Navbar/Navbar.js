@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css"
 
 const Navbar = () =>
-<div id="Navbar">
+<div class="Navbar">
   <ul className="nav nav-tabs">
     <li className={window.location.pathname === "/" ? "active" : ""}>
       <Link to="/"></Link>
