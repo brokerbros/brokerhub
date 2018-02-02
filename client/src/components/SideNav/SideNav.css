@@ -1,0 +1,9 @@
+#SideNav{
+	float:top;
+	float:right;
+	width:400px;
+	height: 900px;
+	position: relative;
+	background-color: red;
+	z-index:-2;
+}

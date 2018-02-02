@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css"
 
 const Navbar = () =>
+<div id="Navbar">
   <ul className="nav nav-tabs">
     <li className={window.location.pathname === "/" ? "active" : ""}>
       <Link to="/"></Link>
@@ -18,6 +20,7 @@ const Navbar = () =>
     <li className={window.location.pathname === "/profile" ? "active" : ""}>
       <Link to="/profile">Profile</Link>
     </li>
-  </ul>;
+  </ul>
+</div>
 
 export default Navbar;
