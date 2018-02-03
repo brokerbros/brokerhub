@@ -1,31 +1,44 @@
-import React from 'react';
-import Carousel from 'react-responsive-carousel';
-import './Carousel';
-import './Property.css';
+import React, {
+    Component
+} from "react";
+import CarouselImg from '../CarouselImg';
+// import './Property.css';
 
-class Properties extends Component {
+import data from "../../testdata.json";
+
+class Property extends Component {
     state = {
-        data,
-        name: data.name,
-        pictures: data.pictures,
-        address: data.address
+        data
     };
 
     render() {
         return (
-            <div className='container'>
-                <h1>Name</h1>
-                <h2>Address</h2>
-                <Carousel>
-                    <CarouselImg />
-                </Carousel>
-                <div className=''>
-                    {props.children}
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    {this.state.data.map(item => (
+                        <CarouselImg 
+                            id={item.id}
+                            image={item.image}
+                            className='carousel-item'
+                        />
+                    ))}
                 </div>
-                {/* <table> */}
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         );
     }
 }
 
-export default Properties;
+export default Property;

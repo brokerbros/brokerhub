@@ -1,0 +1,93 @@
+[
+    {
+      "id": 1,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/bulbasaur.png",
+      "clicked": false
+    },
+    {
+      "id": 2,
+      "image":"https://img.pokemondb.net/sprites/x-y/normal/charmander.png",
+      "clicked": false
+    },
+    {
+      "id": 3,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/squirtle.png",
+      "clicked": false
+    },
+    {
+      "id": 4,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/chikorita.png",
+      "clicked": false
+    },
+    {
+      "id": 5,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/cyndaquil.png",
+      "clicked": false
+    },
+    {
+      "id": 6,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/totodile.png",
+      "clicked": false
+    },
+    {
+      "id": 7,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/treecko.png",
+      "clicked": false
+    },
+    {
+      "id": 8,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/torchic.png",
+      "clicked": false
+    },
+    {
+      "id": 9,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/mudkip.png",
+      "clicked": false
+    },
+    {
+      "id": 10,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/turtwig.png",
+      "clicked": false
+    },
+    {
+      "id": 11,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/chimchar.png",
+      "clicked": false
+    },
+    {
+      "id": 12,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/piplup.png",
+      "clicked": false
+    },
+    {
+      "id": 13,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/snivy.png",
+      "clicked": false
+    },
+    {
+      "id": 14,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/tepig.png",
+      "clicked": false
+    },
+    {
+      "id": 15,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/oshawott.png",
+      "clicked": false
+    },
+    {
+      "id": 16,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/chespin.png",
+      "clicked": false
+    },
+    {
+      "id": 17,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/fennekin.png",
+      "clicked": false
+    },
+    {
+      "id": 18,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/froakie.png",
+      "clicked": false
+    }
+  ]
+  
