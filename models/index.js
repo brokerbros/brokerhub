@@ -3,6 +3,4 @@ module.exports = {
 	Properties: require("./properties"),
 	SalesComps: require("./salescomps"),
 	Users: require(".users")
-
-
 }

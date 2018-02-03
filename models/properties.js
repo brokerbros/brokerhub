@@ -17,7 +17,7 @@ var propertySchema = new Schema({
 		required: true
 	},
 	latitude: {
-		type: Number,
+		type: Double,
 		required: true
 	},
 	longitude: {
