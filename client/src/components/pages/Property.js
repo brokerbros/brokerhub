@@ -24,7 +24,7 @@ class Property extends Component {
                         <CarouselImg 
                             id={item.id}
                             image={item.image}
-                            className='carousel-item'
+                            clicked={item.clicked}
                         />
                     ))}
                 </div>
