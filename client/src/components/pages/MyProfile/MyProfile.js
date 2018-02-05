@@ -13,21 +13,44 @@ class Profile extends Component {
  //  };
 	render() {
 		return (
-			<div className="profilePage">
+			<div className="profilePage ">
     		<div className="contactInfo background-image">
     			<div className="row justify-content-center">
-            <div className="col-10 col-sm-6">
-					   <p className="brokerName">Adam Template</p>
-             <p className="brokerTitle">Senior Vice President</p>
+            <div className="col-10">
+					   <p className="brokerName">Adam Comora</p>
             </div>
-            <div className="col-8 col-sm-5 text-center">
-              <img className="profileImg" src="https://api.naiglobal.com/api/userimages?userId=2227&imageType=profile" alt="Adam Comora"/>
+            <div className="col-10">
+					   <p className="brokerTitle">Senior Vice President</p>
             </div>
+    			</div>
+    			<div className="row justify-content-center">
+    				<div className="col-7 col-sm-5 text-center">
+    				<img className="profileImg" src="https://api.naiglobal.com/api/userimages?userId=2227&imageType=profile" alt="Adam Comora"/>
+    				</div>
+    				<div className="col-10 col-sm-6 col-md-6">
+            <div className="card">
+              <div className="card-body contact-card">
+                <h5 className="header">NAI Capital HQ - Encino</h5>
+                <p className="contact-text">16001 Ventura Boulevard Suite 200 </p>
+                <p className="contact-text">Encino, California United States 91436</p>
+                <p className="contact-text">
+                  <span>T:</span>
+                  <span>1 (555) 555-555</span>
+                  <span> C:</span>
+                  <span>1 (555) 555-555</span>
+                  <span> F:</span>
+                  <span>1 (555) 555-555</span>
+                </p>
+                <a href={`mailto:${"email@email.com"}?subject=Information Request via Your Web Site`}>email@email.com</a>
+                <p className="contact-text">Licence #:100000001</p>
+              </div>
+            </div>
+    				</div>
     			</div>
     		</div>
     		<div className="aboutMe">
           <div className="row justify-content-start">
-            <div className="col-11 col-md-7 order-2 order-md-1">
+            <div className="col-10 c col-md-8">
               <p className="header">Scope of Service Experience</p>
               <p className="about-text">As Vice President for NAI Capital, Inc., Adam has distinguished himself as a proven deal maker who applies extensive market knowledge, the latest technology has to offer, as well as a wealth of information and resources to further accommodate his clients throughout the transaction process. Adam assures his clients’ satisfaction by genuine customer service allowing him to advise clients’ and maintain relationships through listening, communicating and educating clients to the highest standards. </p>
               <p className="header">Background & Experience</p>
@@ -37,20 +60,7 @@ class Profile extends Component {
               <p className="header">Transaction History</p>
               <p className="about-text">Some prominent clients he has served are Smart & Final, AIDS Project Los Angeles, Easton Sports, Paris Industrial Parks, Hager Pacific Properties, Standard Management Company, American Medical Response, Authentic Entertainment, Kaman Industrial Technologies. National Material Supply, Abex Display Systems, All American Moving & Storage, National Material Supply, Dr. Ramesh Arora, Verona Group LLC and many others. </p>
             </div>
-            <div className="col-11 col-sm-8 col-md-5 order-1 order-md-2">
-              <div className="card">
-                <div className="card-body contact-card">
-                  <h5 className="header">NAI Capital HQ - Encino</h5>
-                  <p className="contact-text">16001 Ventura Boulevard Suite 200 </p>
-                  <p className="contact-text">Encino, California United States 91436</p>
-                  <p className="contact-text">T: <span>1 (555) 555-555</span></p>
-                  <p className="contact-text">C: <span>1 (555) 555-555</span></p>
-                  <p className="contact-text">F: <span>1 (555) 555-555</span></p>
-                  <a href={`mailto:${"email@email.com"}?subject=Information Request via Your Web Site`}>email@email.com</a>
-                  <p className="contact-text">Licence #:100000001</p>
-                </div>
-              </div>
-            </div>
+            
           </div>
     		</div>
 		  </div>
