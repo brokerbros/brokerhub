@@ -1,0 +1,39 @@
+.account-tab-section {
+	padding: 0px 25px 25px 25px;
+	font-size: 14px;
+	color: #596981;
+}
+
+.account-tab-section p {
+	margin:0px 0px 10px 0px;
+
+}
+
+.account-info-title {
+	color: #af2d37;
+	font-size: 16px;
+}
+
+.account-info-section {
+	border-bottom: 1px solid #e7ebf3;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.account-info-section input {
+	margin-bottom: 20px;
+	font-size: 14px;
+}
+
+.btn-save {
+		margin-top: 20px;
+    color: #fff;
+    background-color: #af2d37;
+    border-color: #9b1320;
+}
+
+.btn-save:hover {
+    color: #fff;
+    background-color: #9b1320;
+    border-color: #9b1320;
+}
