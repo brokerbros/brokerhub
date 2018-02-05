@@ -13,12 +13,12 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Navbar />
           <Route exact path="/" component={Main} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/property" component={Property} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/import" component={Import} />
+          <Navbar />
         </div>
       </Router>
     );
