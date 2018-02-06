@@ -24,9 +24,9 @@ class ProfileTab extends Component {
           	</p>
           </div>
           <div className="col-10 col-sm-6">
-          	<div className="form-group">
+          	<form className="form-group">
           		<label for="new-contact-email">Contact Email</label>
-					    <input className="form-control" name="new-phone" placeholder="ex. myemail@example.com"/>
+					    <input className="form-control" name="new-phone" placeholder="ex. myemail@example.com" type="email"/>
           		<label for="new-phone">Phone Number</label>
 					    <input className="form-control" name="new-phone" placeholder="ex. (555)-555-5555"/>
 					    <label for="new-cell-phone">Cell Phone Number</label>
@@ -34,7 +34,7 @@ class ProfileTab extends Component {
 					    <label for="new-fax">Fax Number</label>
 					    <input className="form-control" name="new-fax" placeholder="ex. (555)-555-5555"/>
 					    <button className="btn btn-save" type="submit">Save</button>
-					  </div>
+					  </form>
           </div>
         </div>
     		<div className="row account-info-section justify-content-around">
@@ -47,13 +47,13 @@ class ProfileTab extends Component {
           	</p>
           </div>
           <div className="col-10 col-sm-6">
-          	<div className="form-group">
+          	<form className="form-group">
           		<label for="new-title">Title</label>
 					    <input className="form-control" name="new-title" placeholder="ex. Senior Vice President"/>
 					    <label for="new-location">Location</label>
 					    <input className="form-control" name="new-location" placeholder="ex. HQ - Los Angeles"/>
 					    <button className="btn btn-save" type="submit">Save</button>
-					  </div>
+					  </form>
           </div>
         </div>
       	<div className="row account-info-section justify-content-around">
@@ -66,11 +66,11 @@ class ProfileTab extends Component {
           	</p>
           </div>
           <div className="col-10 col-sm-6">
-          	<div className="form-group">
+          	<form className="form-group">
 							<label for="new-experience">Scope of Service Experience</label>
 					    <textarea className="form-control" rows="10" name="new-experience" />
 					    <button className="btn btn-save" type="submit">Save</button>
-					  </div>
+					  </form>
           </div>
         </div>
       	<div className="row account-info-section justify-content-around">
@@ -83,11 +83,11 @@ class ProfileTab extends Component {
           	</p>
           </div>
           <div className="col-10 col-sm-6">
-          	<div className="form-group">
+          	<form className="form-group">
 					    <label for="new-background">Background & Experience</label>
 					    <textarea className="form-control" rows="10" name="new-background" />
 					    <button className="btn btn-save" type="submit">Save</button>
-					  </div>
+					  </form>
           </div>
         </div>
       	<div className="row account-info-section justify-content-around">
@@ -99,13 +99,13 @@ class ProfileTab extends Component {
           		Enter additional information to highlight your education/credentials.
           	</p>
           </div>
-          <div className="col-10 col-sm-6">
+          <form className="col-10 col-sm-6">
           	<div className="form-group">
 					    <label for="new-education">Education</label>
 					    <textarea className="form-control" rows="10" name="new-education" />
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </div>
-          </div>
+          </form>
         </div>
       	<div className="row account-info-section justify-content-around">
           <div className="col-10 col-sm-4 ">
@@ -116,13 +116,13 @@ class ProfileTab extends Component {
           		Enter additional information to highlight your trasaction experience.
           	</p>
           </div>
-          <div className="col-10 col-sm-6">
+          <form className="col-10 col-sm-6">
           	<div className="form-group">
 					    <label for="new-transaction-history">Transaction History</label>
 					    <textarea className="form-control" rows="10" name="new-transaction-history" />
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </div>
-          </div>
+          </form>
         </div>
 		  </section>
 		);
