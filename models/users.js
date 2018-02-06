@@ -41,7 +41,7 @@ var userSchema = new Schema({
 		type: String,
 		required: true
 	},
-	scopeExperiance: {
+	scopeExperience: {
 		type: String,
 		required: true
 	},

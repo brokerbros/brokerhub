@@ -20,8 +20,8 @@ class UserProfile extends Component {
     		<div className="account-header">
           Manage Account
         </div>
-        <div className="row">
-          <div className="col-12 col-sm-3 col-md-2">
+        <div className="row justify-content-around">
+          <div className="col-12 col-sm-3 col-md-2 col-lg-1">
             <nav className="manage-account-nav">
               <div class="nav d-flex-column d-sm-flex-column nav-tabs" id="nav-tab" role="tablist">
                 <a class="nav-item account-nav-link active" id="nav-account-tab" data-toggle="tab" href="#nav-account" role="tab" aria-controls="nav-account" aria-selected="true">Account</a>

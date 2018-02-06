@@ -25,6 +25,18 @@
 	font-size: 14px;
 }
 
+.account-info-section input::placeholder {
+	margin-bottom: 20px;
+	font-size: 14px;
+	color: #a2a3a3;
+}
+
+.form-separator {
+	margin: 30px 0px 30px 0px;
+  content: '';
+  height: 1px;
+}
+
 .btn-save {
 		margin-top: 20px;
     color: #fff;
