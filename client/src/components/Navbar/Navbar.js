@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css"
 
 const Navbar = () =>
+<div class="Navbar">
   <ul className="nav nav-tabs">
     <li className={window.location.pathname === "/" ? "active" : ""}>
-      <Link to="/">Main</Link>
+      <Link to="/"></Link>
     </li>
     <li className={window.location.pathname === "/search" ? "active" : ""}>
       <Link to="/search">Search</Link>
@@ -18,6 +20,8 @@ const Navbar = () =>
     <li className={window.location.pathname === "/profile" ? "active" : ""}>
       <Link to="/profile">Profile</Link>
     </li>
-  </ul>;
+  </ul>
+
+</div>
 
 export default Navbar;

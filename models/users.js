@@ -1,3 +1,4 @@
+//Work In Progress
 // require mongoose
 var mongoose = require("mongoose");
 
@@ -8,11 +9,7 @@ var userSchema = new Schema({
 		type: String,
 		required: true
 	},
-	lastName: {
-		type: String,
-		required: true
-	},
-	email: {
+	LastName: {
 		type: String,
 		required: true
 	},
@@ -20,12 +17,52 @@ var userSchema = new Schema({
 		type: String,
 		required: true
 	},
-	license: {
+	cellphone: {
+		type: Number,
+		required: true
+	},
+	fax: {
+		type: Number,
+		required: true
+	},
+	title: {
 		type: String,
+		required: true
+	},
+	location: {
+		type: String,
+		required: true
+	},
+	specialties: {
+		type: String,
+		required: true
+	},
+	title: {
+		type: String,
+		required: true
+	},
+	scopeExperience: {
+		type: String,
+		required: true
+	},
+	background: {
+		type: String,
+		required: true
+	},
+	education: {
+		type: String,
+		required: true
+	},
+	transationHistory: {
+		type: String,
+		required: true
+	},
+	licenceNumber: {
+		type: Number,
 		required: true
 	}
 });
 
-var Users = mongoose.model("Users", userSchema);
+var user = mongoose.model("user", salesSchema);
 
-module.exports = Users;
+module.exports = user;
