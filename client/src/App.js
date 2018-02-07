@@ -48,7 +48,7 @@ function ShowRoute({component: Component, items, param, ...rest}) {
 
 
 class App extends Component {
-<<<<<<< HEAD
+
 
   componentDidMount() {
     axios.get("/api/users")
@@ -56,7 +56,7 @@ class App extends Component {
 
 render() {
 return (
-=======
+
     constructor() {
       super();
       this.setCurrentUser = this.setCurrentUser.bind(this);
