@@ -6,7 +6,6 @@ import Property from "./components/pages/Property";
 import Profile from "./components/pages/Profile";
 import Import from "./components/pages/Import";
 import Navbar from "./components/Navbar/Navbar";
-import SideNav from "./components/SideNav/SideNav";
      
 class App extends Component {
 render() {

@@ -21,8 +21,8 @@ const Navbar = () =>
     <li className={window.location.pathname === "/profile" ? "active" : ""}>
       <Link to="/profile">Profile</Link>
     </li>
-    <li className={window.location.pathname === "/home" ? "active" : ""}>
-      <Link to="/profile">Home</Link>
+    <li className={window.location.pathname === "/" ? "active" : ""}>
+      <Link to="/">Home</Link>
     </li>
 
     <li className="searchBar">
