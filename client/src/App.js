@@ -8,10 +8,10 @@ import UserProfile from "./components/pages/UserProfile/UserProfile";
 import Import from "./components/pages/Import";
 import Navbar from "./components/Navbar/Navbar";
 import SideNav from "./components/SideNav/SideNav";
-
+     
 class App extends Component {
-  render() {
-    return (
+render() {
+return (
       <Router>
         <div>
           <Route exact path="/" component={Main} />
@@ -20,11 +20,14 @@ class App extends Component {
           <Route exact path="/profile" component={UserProfile} />
           <Route exact path="/profile/:id" component={Profile} />
           <Route exact path="/import" component={Import} />
+
           <Navbar />
+
         </div>
+
       </Router>
-    );
+ 
+        );
   }
 }
-
 export default App;

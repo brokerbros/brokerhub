@@ -1,9 +1,13 @@
 #SideNav{
-	float:top;
-	float:right;
-	width:400px;
-	height: 900px;
-	position: relative;
-	background-color: red;
-	z-index:-2;
-}
+padding-top:50px;
+top:0;
+right: 0;
+width:600px;
+height: 100%;
+position: fixed;
+border-style: solid;
+border-color: black;
+border-width: 10px;
+background-color: yellow;
+};
+

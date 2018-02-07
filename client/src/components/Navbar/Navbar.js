@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css"
+import "./Navbar.css";
+import "./Navbar.js"
 
 const Navbar = () =>
 <div class="Navbar">
@@ -20,8 +21,13 @@ const Navbar = () =>
     <li className={window.location.pathname === "/profile" ? "active" : ""}>
       <Link to="/profile">Profile</Link>
     </li>
+    <li className="searchBar">
+      <form>
+        <input type="text" placeholder="Search..." />
+        <input type="submit" value="Submit" />
+      </form>
+    </li>
   </ul>
-
 </div>
 
 export default Navbar;
