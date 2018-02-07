@@ -38,6 +38,9 @@ var leaseSchema = new Schema({
 	askingrent: {
 		type: Number,
 		required: true
+	},
+	listingBroker: {
+		type: String
 	}
 });
 
