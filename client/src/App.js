@@ -107,7 +107,6 @@ return (
   render() {
     return (
       <div style={{maxWidth: "1160px", margin: "0 auto"}}>
->>>>>>> master
       <Router>
         <div>
         <Navbar authenticated={this.state.authenticated} />
