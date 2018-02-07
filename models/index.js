@@ -1,6 +1,6 @@
 module.exports = {
-	LeaseComps: require("./leasecomps"),
-	Properties: require("./properties"),
-	SalesComps: require("./salescomps"),
-	Users: require(".users")
+	LeaseComps: require("./LeaseComps"),
+	Properties: require("./Properties"),
+	SalesComps: require("./SalesComps"),
+	Users: require("./users")
 }
