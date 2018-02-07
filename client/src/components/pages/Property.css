@@ -1,0 +1,10 @@
+.property-container {
+    width:80%;
+    margin: 0 auto;
+}
+
+.carousel {
+    width:100%;
+    padding:10px;
+    background-color:black;
+}
