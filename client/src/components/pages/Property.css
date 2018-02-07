@@ -1,12 +1,8 @@
 .page-body {
-    background-color:red: 
+    background-color:white; 
 }
 
 .topbar-container {
-    margin-top:25px;
-}
-
-.topbar {
     border-bottom: 1px solid #e7ebf3;
     background: #f7f8fb;
     font-size: 20px;
@@ -17,17 +13,36 @@
 }
 
 .property-container {
-    width:80%;
     margin: 0 auto;
-    margin-top: 20px;
     margin-bottom: 20px;
-    padding-left:20px;
-    padding-right:20px;
+    padding:20px;
+    padding-top:20px;
 }
 
 .carousel {
     width:100%;
-    padding:10px;
-    background-color:black;
+    padding-bottom:5px;
     margin: 15px 0 15px 0;
+    margin-top:0;
 }
+
+.carousel-inner {
+    height:500px;
+}
+
+ol > li.active {
+    background-color: rgba(182, 46, 57, .75);
+}
+
+.line-style {
+    background-color: rgba(182, 46, 57, 0.75);
+    height: 1px;
+}
+
+.carousel-control-prev, .carousel-control-next {
+    background-color: rgb(182,46,56);
+}
+/* .carousel-inner > .carousel-item > img {
+    width:500px;
+    height:500px;
+  } */

@@ -17,11 +17,12 @@ class Property extends Component {
         return (
             <div className="page-body">
                 <div className="topbar-container">
-                    <h1 className="topbar">Property Information</h1>
+                    Property Information
                 </div>
                 <div className="property-container">
                     <h1>{this.state.data2[0].address}</h1>
                     <h3>{this.state.data2[0].city}, {this.state.data2[0].state} {this.state.data2[0].zipcode}</h3>
+                    <hr />
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
                             {this.state.data.map(item => (
