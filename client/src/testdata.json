@@ -1,18 +1,93 @@
 [
     {
       "id": 1,
-      "name": "Bulbasaur",
-      "image": "https://img.pokemondb.net/sprites/x-y/normal/bulbasaur.png"
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/bulbasaur.png",
+      "clicked": "carousel-item active"
     },
     {
       "id": 2,
-      "name": "Charmander",
-      "image":"https://img.pokemondb.net/sprites/x-y/normal/charmander.png"
+      "image":"https://img.pokemondb.net/sprites/x-y/normal/charmander.png",
+      "clicked": "carousel-item"
     },
     {
       "id": 3,
-      "name": "Squirtle",
-      "image": "https://img.pokemondb.net/sprites/x-y/normal/squirtle.png"
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/squirtle.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 4,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/chikorita.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 5,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/cyndaquil.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 6,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/totodile.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 7,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/treecko.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 8,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/torchic.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 9,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/mudkip.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 10,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/turtwig.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 11,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/chimchar.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 12,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/piplup.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 13,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/snivy.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 14,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/tepig.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 15,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/oshawott.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 16,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/chespin.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 17,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/fennekin.png",
+      "clicked": "carousel-item"
+    },
+    {
+      "id": 18,
+      "image": "https://img.pokemondb.net/sprites/x-y/normal/froakie.png",
+      "clicked": "carousel-item"
     }
   ]
   
