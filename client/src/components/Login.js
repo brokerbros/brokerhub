@@ -99,7 +99,9 @@ class Login extends Component {
         <form onSubmit={(event) => { this.authWithEmailPassword(event) }} ref={(form) => { this.loginForm = form }}>
           <div style={{marginBottom: "10px"}} >
             <h5>Note</h5>
-            If you don't have an account already, this form will create your account.
+            <p>
+              If you do not have an account already, this form will create your account.
+            </p>
           </div>
           <label className="pt-label">
             Email
