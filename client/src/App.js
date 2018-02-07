@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from "./components/pages/Main";
 import Search from "./components/pages/Search";
@@ -10,6 +11,11 @@ import Navbar from "./components/Navbar/Navbar";
 import SideNav from "./components/SideNav/SideNav";
      
 class App extends Component {
+
+  componentDidMount() {
+    axios.get("/api/users")
+  }
+
 render() {
 return (
       <Router>
