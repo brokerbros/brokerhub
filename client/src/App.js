@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Main from "./components/pages/Main";
 import Search from "./components/pages/Search";
 import Property from "./components/pages/Property";
@@ -48,15 +48,6 @@ function ShowRoute({component: Component, items, param, ...rest}) {
 
 
 class App extends Component {
-
-
-  componentDidMount() {
-    axios.get("/api/users")
-  }
-
-render() {
-return (
-
     constructor() {
       super();
       this.setCurrentUser = this.setCurrentUser.bind(this);
