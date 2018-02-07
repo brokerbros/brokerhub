@@ -1,13 +1,12 @@
 import React from "react";
-import "./Footer.css"
 import "./main.css"
 import "./map.css"
+import SideNav from "../SideNav/SideNav";
 
 const Main = () =>
 
   <div className="container" id="map">
-    <h1>Broker Bros, Bro</h1>
-    <p>Insert Map Here</p>
+<p> landing page </p>
   </div>
 
 
