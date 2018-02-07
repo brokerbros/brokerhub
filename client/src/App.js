@@ -7,10 +7,6 @@ import Property from "./components/pages/Property";
 import Profile from "./components/pages/Profile/Profile";
 import UserProfile from "./components/pages/UserProfile/UserProfile";
 import Import from "./components/pages/Import";
-<<<<<<< HEAD
-import Navbar from "./components/Navbar/Navbar";
-     
-=======
 import SideNav from "./components/SideNav/SideNav";
 import Navbar from "./components/Navbar/Navbar";
 import Login from './components/Login';
@@ -51,7 +47,6 @@ function ShowRoute({component: Component, items, param, ...rest}) {
 }
 
 
->>>>>>> 3b81e54f197a1ba2adad87f2f5bed359d3868f23
 class App extends Component {
     constructor() {
       super();
@@ -112,9 +107,7 @@ class App extends Component {
           <Route exact path="/profile" component={UserProfile} />
           <Route exact path="/profile/:id" component={Profile} />
           <Route exact path="/import" component={Import} />
-<<<<<<< HEAD
-    
-=======
+
 
 
 
@@ -123,7 +116,7 @@ class App extends Component {
                 }} />
                 <Route exact path="/logout" component={Logout} />
 
->>>>>>> 3b81e54f197a1ba2adad87f2f5bed359d3868f23
+
         </div>
 
       </Router>
