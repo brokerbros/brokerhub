@@ -6,7 +6,7 @@ const SideNav = () =>
 <div id="SideNav">
 	<ul className="nav nav-tabs">
     	<li className={window.location.pathname === "/" ? "active" : ""}>
-      		<p> Insert Property Info Here </p>
+      		<h1>Properties</h1>
       	</li>
      </ul>
 </div>
