@@ -6,14 +6,11 @@ import { Position } from '@blueprintjs/core'
 
 class Navbar extends Component {
 
-
-
-
   render() {
      return (
       <nav className="pt-navbar">
       <div className="pt-navbar-group pt-align-left">
-      <div className="pt-navbar-heading">BrokerBros</div>
+      <div className="pt-navbar-heading" ><Link to="/" className="pt-button pt-minimal">BrokerHub</Link></div>
          <ul className="pt-navbar-group pt-align-left">
            <li className={window.location.pathname === "/" ? "active" : ""}>
              <Link to="/"></Link>
@@ -29,6 +26,12 @@ class Navbar extends Component {
            </li>
            <li className={window.location.pathname === "/profile" ? "active" : ""}>
              <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
+           </li>
+           <li className="searchBar">
+              <form>
+                <input type="text" placeholder="Search..." />
+                <input type="submit" value="Submit" />
+              </form>
            </li>
           </ul>
       </div>

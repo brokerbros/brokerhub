@@ -1,3 +1,5 @@
+
+// Requires modles subfolder
 const db = require("../models");
 
 module.exports = {
@@ -34,3 +36,4 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   }
 }
+// Exports to '../api/users.js'
