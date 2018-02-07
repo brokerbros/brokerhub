@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const LeaseCompRoutes = require("./leasecomps");
 const SalesCompRoutes = require("./salescomps");
-const PropertyCompRoutes = require("./properties");
+const PropertyRoutes = require("./properties");
 const UserRoutes = require("./users");
 
 // Routes
