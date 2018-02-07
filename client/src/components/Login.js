@@ -100,7 +100,7 @@ class Login extends Component {
           <div style={{marginBottom: "10px"}} >
             <h5>Note</h5>
             <p>
-              If you don't have an accountn already, this form will create your account.
+              If you do not have an account already, this form will create your account.
             </p>
           </div>
           <label className="pt-label">
