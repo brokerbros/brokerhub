@@ -21,6 +21,10 @@ const Navbar = () =>
     <li className={window.location.pathname === "/profile" ? "active" : ""}>
       <Link to="/profile">Profile</Link>
     </li>
+    <li className={window.location.pathname === "/home" ? "active" : ""}>
+      <Link to="/profile">Home</Link>
+    </li>
+
     <li className="searchBar">
       <form>
         <input type="text" placeholder="Search..." />

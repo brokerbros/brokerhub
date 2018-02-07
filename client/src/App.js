@@ -19,7 +19,7 @@ return (
           <Route exact path="/property" component={Property} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/import" component={Import} />
-        <SideNav />
+    
         </div>
 
       </Router>

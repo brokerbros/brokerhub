@@ -6,7 +6,7 @@ import SideNav from "../SideNav/SideNav";
 const Main = () =>
 
   <div className="container" id="map">
-<p> landing page </p>
+<img src={"../public/img/suburban-family.jpg"} />
   </div>
 
 
