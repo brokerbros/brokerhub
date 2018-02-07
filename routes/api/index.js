@@ -8,6 +8,7 @@ const UserRoutes = require("./users");
 router.use("/leasecomps", LeaseCompRoutes);
 router.use("/salescomps", SalesCompRoutes);
 router.use("/properties", PropertyRoutes);
+
 router.use("/users", UserRoutes);
 
 module.exports = router;
