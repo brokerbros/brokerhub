@@ -7,10 +7,10 @@ import Profile from "./components/pages/Profile";
 import Import from "./components/pages/Import";
 import Navbar from "./components/Navbar/Navbar";
 import SideNav from "./components/SideNav/SideNav";
-
+     
 class App extends Component {
-  render() {
-    return (
+render() {
+return (
       <Router>
         <div>
           <Navbar />
@@ -19,11 +19,12 @@ class App extends Component {
           <Route exact path="/property" component={Property} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/import" component={Import} />
-          <SideNav />
+        <SideNav />
         </div>
+
       </Router>
-    );
+ 
+        );
   }
 }
-
 export default App;
