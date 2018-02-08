@@ -1,3 +1,12 @@
 .textcolor {
-    color:black;
+    color:white;
+}
+
+.carousel-item {
+    background-color:#f7f8fb;
+    margin:0;
+}
+
+.img {
+    height:500px;
 }
