@@ -5,12 +5,13 @@ import CarouselImg from '../CarouselImg';
 import './Property.css';
 
 import data from "../../testdata.json";
-import data2 from "../../testdata2.json";
-console.log(data2);
+
 class Property extends Component {
+
+    //
     state = {
         data: data,
-        data2: data2
+        data2: data[0].images
     };
 
     render() {
@@ -20,8 +21,8 @@ class Property extends Component {
                     Property Information
                 </div>
                 <div className="property-container">
-                    <h1>{this.state.data2[0].address}</h1>
-                    <h3>{this.state.data2[0].city}, {this.state.data2[0].state} {this.state.data2[0].zipcode}</h3>
+                    <h1>{this.state.data[0].address}</h1>
+                    <h3>{this.state.data[0].city}, {this.state.data[0].state} {this.state.data[0].zipcode}</h3>
                     <hr />
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -30,7 +31,7 @@ class Property extends Component {
                             ))}
                         </ol>
                         <div class="carousel-inner">
-                            {this.state.data.map(item => (
+                            {this.state.data2.map(item => (
                                 <CarouselImg
                                     id={item.id}
                                     name={item.address}
@@ -49,7 +50,7 @@ class Property extends Component {
                         </a>
                     </div>
                     <h2>Description</h2>
-                    <p>{this.state.data2[0].description}</p>
+                    <p>{this.state.data[0].description}</p>
                     <h2>Additional Information</h2>
                 </div>
             </div>

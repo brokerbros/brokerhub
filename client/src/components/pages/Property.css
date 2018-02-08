@@ -40,7 +40,7 @@ ol > li.active {
 }
 
 .carousel-control-prev, .carousel-control-next {
-    background-color: rgb(182,46,56);
+    background-color: rgb(0, 0, 0);
 }
 /* .carousel-inner > .carousel-item > img {
     width:500px;
