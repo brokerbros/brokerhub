@@ -7,7 +7,8 @@ export class MapContainer extends React.Component {
 	render() {
 		const style = {
  			width: '1000px',
-  			height: '100%'
+  			height: '100%',
+  			position: 'relative'
 		}
 
 		if (!this.props.loaded) {

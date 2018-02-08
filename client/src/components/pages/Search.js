@@ -5,7 +5,19 @@ import "./main.css";
 import "./map.css";
 import SideNav from "../SideNav/SideNav";
 
+
+
 class Search extends Component {
+	state = {
+		properties: [],
+		latitude: "",
+		longitude: "",
+		propertyName: ""
+	};
+
+	// componentDidMount() {
+	// 	this.loadProperties();
+	// }
 
 	render() {
 		return ( 
