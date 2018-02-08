@@ -6,15 +6,12 @@ var Schema = mongoose.Schema;
 var propertySchema = new Schema({
 	address: {
 		type: String,
-		required: true
 	},
 	city: {
 		type: String,
-		required: true
 	},
 	state: {
 		type: String,
-		required: true
 	},
 	latitude: {
 		type: Number,
@@ -29,15 +26,12 @@ var propertySchema = new Schema({
 	},
 	squarefeet: {
 		type: Number,
-		required: true
 	},
 	type: {
 		type: String,
-		required: true
 	},
 	askingrent: {
 		type: Number,
-		required: true
 	}
 });
 

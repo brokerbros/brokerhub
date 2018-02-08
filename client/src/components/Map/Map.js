@@ -6,7 +6,7 @@ import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 export class MapContainer extends React.Component {
 	render() {
 		const style = {
- 			width: '1000px',
+ 			width: '100%',
   			height: '100%'
 		}
 
