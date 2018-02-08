@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import GoogleMapReact from 'google-map-react';
+import ReactDOM from 'react-dom';
+import { MapContainer } from '../Map'
+import API from "../../utils/API";
+// import { Col, Row,  Container } from "../Grid";
 import "./main.css";
 import "./map.css";
 import SideNav from "../SideNav/SideNav";
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 const Search = () =>
     <div className="container" id="map">
@@ -18,32 +22,47 @@ const Search = () =>
 //     <p>Insert Map Here</p>
 //   </div>;
 >>>>>>> eb6d153ac15415f2e780a571c6257b84345a59a4
+=======
+>>>>>>> 880b4272452055f50b799ba4a800eff9ac089418
 
-// export default Search;
 
-const Search = ({ text }) => <div>{text}</div>;
+class Search extends Component {
+	state = {
+		properties: [],
+		latitude: "",
+		longitude: "",
+		propertyName: ""
+	};
 
-class SimpleMap extends Component {
-	static defaultProps = {
-		center: {lat: 34.040363, lng: -118.248691},
-		zoom: 10
+	componentDidMount() {
+		this.loadProperties();
+	}
+
+	loadProperties = () => {
+		API.getProperties()
+			.then(res => 
+				this.setState({ properties: res.data, latitude: "", longitude: "", propertyName: "" })
+			)
+			.catch(err => console.log(err));
 	};
 
 	render() {
-		return (
-		<GoogleMapReact
-			defaultCenter={this.props.center}
-			defaultZoom={this.props.zoom}
-		>
-
-			<Search
-			 lat={34.040363}
-			 lng={-118.248691}
-			 text={'BrokerBros, Bro!'}
-			/>
-		</GoogleMapReact>
+		return ( 
+		<div className="container">
+			<div className="row">
+				<div className="col-8">
+				<h1>Map Container</h1>
+				</div>
+				<div className="col-4">
+				<h1>Search Bar</h1>
+				</div>
+			</div>
+			<div className="row">
+				<MapContainer />
+			</div>
+		</div>
 		);
-	}
+	}	
 }
 
 export default Search;
