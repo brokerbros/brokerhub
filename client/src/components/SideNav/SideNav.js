@@ -1,6 +1,5 @@
 import React from "react";
 import "./SideNav.css";
-import { Link } from "react-router-dom";
 
 const SideNav = () =>
 <div id="SideNav">

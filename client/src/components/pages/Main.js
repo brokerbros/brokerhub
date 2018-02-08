@@ -1,13 +1,10 @@
 import React from "react";
-import "./main.css"
-import "./map.css"
-import SideNav from "../SideNav/SideNav";
+import picture from './suburban-family.jpg';
 
 const Main = () =>
-
-  <div className="container" id="map">
-<p> landing page </p>
-  </div>
-
+<div>
+<img src={ picture } />
+<p> asdfasdfasdf </p>
+</div>
 
 export default Main;
