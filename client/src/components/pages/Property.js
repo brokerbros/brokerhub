@@ -33,6 +33,7 @@ class Property extends Component {
                             {this.state.data.map(item => (
                                 <CarouselImg
                                     id={item.id}
+                                    name={item.address}
                                     image={item.image}
                                     active={item.id === 1 ? 'carousel-item active' : 'carousel-item'}
                                 />
