@@ -6,6 +6,26 @@ import { Position } from '@blueprintjs/core'
 
 class Navbar extends Component {
 
+  authenticatedNavImport() {
+    if (this.props.authenticated === true) {
+      return (
+        <li className={window.location.pathname === "/import" ? "active" : ""}>
+          <Link to="/import" className="pt-button pt-minimal">Import File</Link>
+        </li>
+        );
+    }
+  }
+
+  authenticatedNavProfile() {
+    if (this.props.authenticated === true) {
+      return (
+          <li className={window.location.pathname === "/profile" ? "active" : ""}>
+            <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
+          </li>
+        );
+    }
+  }
+
   render() {
      return (
       <nav className="pt-navbar">
@@ -21,12 +41,8 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/property" ? "active" : ""}>
              <Link to="/property" className="pt-button pt-minimal">Property</Link>
            </li>
-           <li className={window.location.pathname === "/import" ? "active" : ""}>
-             <Link to="/import" className="pt-button pt-minimal">Import File</Link>
-           </li>
-           <li className={window.location.pathname === "/profile" ? "active" : ""}>
-             <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
-           </li>
+           {this.authenticatedNavImport()}
+           {this.authenticatedNavProfile()}
            <li className="searchBar">
               <form>
                 <input type="text" placeholder="Search..." />

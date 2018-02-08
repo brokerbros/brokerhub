@@ -95,6 +95,12 @@ class App extends Component {
       this.removeAuthUser();
     }
 
+    viewProfile(){
+      if(this.state.authenticated === true){
+        return <Route exact path="/profile" component={UserProfile} />;
+      }
+    }
+
   render() {
     return (
       <div style={{maxWidth: "1160px", margin: "0 auto"}}>
@@ -104,7 +110,7 @@ class App extends Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/property" component={Property} />
-          <Route exact path="/profile" component={UserProfile} />
+          {this.viewProfile()}
           <Route exact path="/profile/:id" component={Profile} />
           <Route exact path="/import" component={Import} />
 
@@ -113,7 +119,7 @@ class App extends Component {
                 <Route exact path="/login" render={(props) => {
                   return <Login setCurrentUser={this.setCurrentUser} {...props} />
                 }} />
-                <Route exact path="/logout" component={Logout} />
+                <Route exact path="/logout" component={Main} />
 
         </div>
 

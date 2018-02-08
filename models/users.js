@@ -13,6 +13,15 @@ var userSchema = new Schema({
 		type: String,
 		required: true
 	},
+	accountId: {
+		type: String,
+	},
+	accountEmail: {
+		type: String,
+	},
+	contactEmail: {
+		type: String,
+	},
 	telephone: {
 		type: String,
 	},
