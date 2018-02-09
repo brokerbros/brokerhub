@@ -25,13 +25,13 @@ class ProfileTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-          		<label for="new-contact-email">Contact Email</label>
+          		<label >Contact Email</label>
 					    <input className="form-control" name="new-phone" placeholder="ex. myemail@example.com" type="email"/>
-          		<label for="new-phone">Phone Number</label>
+          		<label >Phone Number</label>
 					    <input className="form-control" name="new-phone" placeholder="ex. (555)-555-5555"/>
-					    <label for="new-cell-phone">Cell Phone Number</label>
+					    <label >Cell Phone Number</label>
 					    <input className="form-control" name="new-cell-phone" placeholder="ex. (555)-555-5555"/>
-					    <label for="new-fax">Fax Number</label>
+					    <label >Fax Number</label>
 					    <input className="form-control" name="new-fax" placeholder="ex. (555)-555-5555"/>
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </form>
@@ -48,9 +48,9 @@ class ProfileTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-          		<label for="new-title">Title</label>
+          		<label >Title</label>
 					    <input className="form-control" name="new-title" placeholder="ex. Senior Vice President"/>
-					    <label for="new-location">Location</label>
+					    <label >Location</label>
 					    <input className="form-control" name="new-location" placeholder="ex. HQ - Los Angeles"/>
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </form>
@@ -67,7 +67,7 @@ class ProfileTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-							<label for="new-experience">Scope of Service Experience</label>
+							<label >Scope of Service Experience</label>
 					    <textarea className="form-control" rows="10" name="new-experience" />
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </form>
@@ -84,7 +84,7 @@ class ProfileTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-					    <label for="new-background">Background & Experience</label>
+					    <label >Background & Experience</label>
 					    <textarea className="form-control" rows="10" name="new-background" />
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </form>
@@ -101,7 +101,7 @@ class ProfileTab extends Component {
           </div>
           <form className="col-10 col-sm-6">
           	<div className="form-group">
-					    <label for="new-education">Education</label>
+					    <label >Education</label>
 					    <textarea className="form-control" rows="10" name="new-education" />
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </div>
@@ -118,7 +118,7 @@ class ProfileTab extends Component {
           </div>
           <form className="col-10 col-sm-6">
           	<div className="form-group">
-					    <label for="new-transaction-history">Transaction History</label>
+					    <label >Transaction History</label>
 					    <textarea className="form-control" rows="10" name="new-transaction-history" />
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </div>

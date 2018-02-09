@@ -25,11 +25,11 @@ class AccountTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-          		<label for="new-email">Email Address</label>
+          		<label >Email Address</label>
 					    <input className="form-control" name="new-email" placeholder="email@mail.com" type="email"/>
-					    <label for="new-first-name">First Name</label>
+					    <label >First Name</label>
 					    <input className="form-control" name="new-first-name" placeholder="Adam"/>
-					    <label for="new-last-name">Last Name</label>
+					    <label >Last Name</label>
 					    <input className="form-control" name="new-last-name" placeholder="Template"/>
 					    <button className="btn btn-save" type="submit">Save</button>
 					  </form>
@@ -46,12 +46,12 @@ class AccountTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-          		<label for="current-password">Current Password</label>
+          		<label >Current Password</label>
 					    <input className="form-control current-password" name="current-password" type="password" placeholder="Enter your current password"/>
 					    <div className="form-separator"/>
-					    <label for="new-password">New Password</label>
+					    <label >New Password</label>
 					    <input className="form-control" name="new-password" type="password" placeholder="Enter a new password"/>
-					    <label for="new-confirm-password">Confirm Password</label>
+					    <label >Confirm Password</label>
 					    <input className="form-control" name="new-confirm-password" type="password" placeholder="Enter the password again"/>
 					    <button className="btn btn-save" type="submit">Change</button>
 					  </form>
