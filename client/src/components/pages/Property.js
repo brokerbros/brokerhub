@@ -94,8 +94,16 @@ class Property extends Component {
                   <th>{this.state.data.zipcode}</th>
                 </tr>
                 <tr>
-                  <th><strong>Size</strong></th>
-                  <th>{this.state.data.size}</th>
+                  <th><strong>Square Feet</strong></th>
+                  <th>{this.state.data.squarefeet}</th>
+                </tr>
+                <tr>
+                  <th><strong>Type</strong></th>
+                  <th>{this.state.data.type}</th>
+                </tr>
+                <tr>
+                  <th><strong>Asking Rent</strong></th>
+                  <th>{this.state.data.askingrent}</th>
                 </tr>
               </tbody>
             </table>
