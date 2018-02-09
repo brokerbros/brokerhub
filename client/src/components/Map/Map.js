@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import Marker from './children/Marker';
+import API from "../../utils/api";
 import InfoWindow from './children/InfoWindow'
 
 const propertySeed = [
@@ -44,6 +45,25 @@ export class MapContainer extends React.Component {
 		showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
+    properties: [],
+    latitude: "",
+    longitude: "",
+    propertyName: "",
+    squarefeet: "",
+    type: "",
+    askingrent: ""
+	}
+
+	componentDidMount() {
+		this.getProperties();
+	}
+
+	getProperties = () => {
+		API.getProperties()
+			.then(res => 
+				this.setState({ properties: res.data, latitude: "", longitude: "", propertyName: "", squarefeet: "", type: "", askingrent: "" })
+			)
+			.catch(err => console.log(err));
 	}
 
 	onMarkerClick(props, marker, e) {
@@ -63,8 +83,8 @@ export class MapContainer extends React.Component {
 
 	render() {
 		const style = {
- 			width: '100%',
-  			height: '100%',
+ 			width: '1000px',
+  		height: '100%',
   			overflow: 'hidden'
 		}
 
@@ -83,10 +103,15 @@ export class MapContainer extends React.Component {
 				onClick={this.onMapClicked}
 			>
 			{
-				propertySeed.map(property => 
+				this.state.properties.map(property => 
 					<Marker
 						onClick={this.onMarkerClick}
+						_id={property._id}
+						key={property._id}
 						name={ property.propertyName }
+						size={ property.squarefeet }
+						type={ property.type }
+						rent={ property.askingrent }
 						position={{lat: property.latitude, lng: property.longitude}}
 					/>
 				)
@@ -99,7 +124,10 @@ export class MapContainer extends React.Component {
 			  	onClose={this.onInfoWindowClose}
 			>
 			   	<div>
-			    	<h1>{this.state.selectedPlace.name}</h1>
+			    	<p>{this.state.selectedPlace.name}
+			    	{this.state.selectedPlace.size}
+			    	{this.state.selectedPlace.type}
+			    	{this.state.selectedPlace.rent}</p>			    
 			    </div>
 			</InfoWindow>
 
