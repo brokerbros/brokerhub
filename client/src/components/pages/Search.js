@@ -34,10 +34,10 @@ class Search extends Component {
 		<div className="container">
 			<div className="row">
 				<div className="col-8">
-				<h1>Map Container</h1>
+					<h1>Map Container</h1>
 				</div>
 				<div className="col-4">
-				<h1>Search Bar</h1>
+					<h1>Search</h1>
 				</div>
 			</div>
 			<div className="row">
