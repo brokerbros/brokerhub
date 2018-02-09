@@ -14,15 +14,21 @@ mongoose.connect(
 const userSeed = [
   {
     firstName: "Tyler",
-    lastName: "Durden"
+    lastName: "Durden",
+    accountEmail: "test1@email.com",
+    accountId: "test1"
   },
   {
     firstName: "Rick",
-    lastName: "Sanchez"
+    lastName: "Sanchez",
+    accountEmail: "test2@email.com",
+    accountId: "test2"
   },
   {
     firstName: "Bird",
-    lastName: "Person"
+    lastName: "Person",
+    accountEmail: "test3@email.com",
+    accountId: "test3"
   }
 ];
 
