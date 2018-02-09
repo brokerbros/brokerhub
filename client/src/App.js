@@ -162,10 +162,12 @@ class App extends Component {
 
 
 
+
                 <Route exact path="/login" render={(props) => {
                   return <Login setCurrentUser={this.setCurrentUser} {...props} />
                 }} />
                 <Route exact path="/logout" component={Logout} />
+
 
         </div>
 

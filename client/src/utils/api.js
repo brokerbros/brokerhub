@@ -23,10 +23,34 @@ export default {
 	getSales: function() {
 		return axios.get("/api/salescomps");
 	},
+	getSale: function(id) {
+		return axios.get("/api/salescomps" + id);
+	},
+	updateSale: function(id) {
+		return axios.put("/api/salescomps" + id);
+	},
+	deleteSale: function(id) {
+		return axios.delete("/api/salescomps" + id);
+	},
+	createSale: function(saleData) {
+		return axios.post("/api/salescomps", saleData);
+	},
 	// ...
 	// // PROPERTY API DATA // //
 	getProperties: function() {
 		return axios.get("/api/properties");
+	},
+	getProperty: function(id) {
+		return axios.get("/api/properties/" + id);
+	},
+	updateProperty: function(id) {
+		return axios.put("/api/properties" + id);
+	},
+	deleteProperty: function(id) {
+		return axios.delete("/api/properties" + id);
+	},
+	createProperty: function(propertyData) {
+		return axios.post("/api/properties", propertyData);
 	},
 	// ...
 	// // USER API DATA // //
@@ -38,7 +62,11 @@ export default {
 	},
 	createUser: function(user) {
 		return axios.post("/api/users/", user);
+	},
+	updateUsers: function(id) {
+		return axios.put("/api/users" + id);
+	},
+	deleteUsers: function(id) {
+		return axios.delete("/api/users" + id);
 	}
-
-
-}
+};

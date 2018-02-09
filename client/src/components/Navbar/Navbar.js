@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Navbar.css"
 import { Position } from '@blueprintjs/core'
 
-
 class Navbar extends Component {
 
   authenticatedNavImport() {
@@ -72,5 +71,6 @@ class Navbar extends Component {
       );
     }
 }
+
 
 export default Navbar;
