@@ -155,7 +155,8 @@ class App extends Component {
         <Navbar authenticated={this.state.authenticated} />
           <Route exact path="/" component={Main} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/property" component={Property} />
+          <Route exact path="/property/:id" component={Property} />
+          <Route exact path="/property" component={Search} />
           {this.viewProfile()}
           <Route exact path="/profile/:id" component={Profile} />
           <Route exact path="/import" component={Import} />
