@@ -60,7 +60,7 @@ class App extends Component {
   
     setCurrentUser(user) {
       if (user) {
-        console.log("setCurrentUser",user);
+        //console.log("setCurrentUser",user);
         // this.setState({
         //   currentUser: user,
         //   authenticated: true
@@ -77,7 +77,7 @@ class App extends Component {
     }
 
     getUserInfoFromDataBase(user) {
-      console.log(user,user.email)
+      //console.log(user,user.email)
       API.getUserByEmail(user.email)
         .then(res => {
           console.log("found user", user.email, res, res.data)
@@ -108,7 +108,7 @@ class App extends Component {
     addUserToDataBase(newUser, fbUserData) {
       API.createUser(newUser)
         .then( (res)=> {
-          console.log("New USER", res)
+          //console.log("New USER", res)
           this.setState({ 
             authenticated: true,
             currentUser: fbUserData
@@ -121,7 +121,7 @@ class App extends Component {
     componentWillMount() {
       this.removeAuthUser = app.auth().onAuthStateChanged((user) => {
         if (user) {
-          console.log("componentWillMount",user, user.email);
+          //console.log("componentWillMount",user, user.email);
           this.getUserInfoFromDataBase(user);
           // this.setState({
           //   currentUser: user,
