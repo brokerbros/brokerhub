@@ -5,16 +5,16 @@ var Schema = mongoose.Schema;
 
 var leaseSchema = new Schema({
 	address: {
-		type: String,
-		required: true
+	type: String,
+
 	},
 	city: {
 		type: String,
-		required: true
+		
 	},
 	state: {
 		type: String,
-		required: true
+		
 	},
 	latitude: {
 		type: Number,
@@ -27,17 +27,24 @@ var leaseSchema = new Schema({
 	propertyName: {
 		type: String,
 	},
-	squarefeet: {
-		type: Number,
-		required: true
-	},
-	type: {
-		type: String,
-		required: true
-	},
 	askingrent: {
 		type: Number,
 		required: true
+	},
+		propertyName: {
+		type: String,
+	},
+	squarefeet: {
+		type: Number,
+	
+	},
+	type: {
+		type: String,
+		
+	},
+	saleprices: {
+		type: Number,
+		
 	},
 	listingBroker: {
 		type: String
