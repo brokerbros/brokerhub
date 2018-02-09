@@ -14,10 +14,11 @@ export default {
 	// Possibly incomplete. I created this one from memory
 	deleteLease: function(id) {
 		return axios.delete("/api/leasecomps/" + id);
-	},
-	createLease: function(leaseData) {
-		return axios.post("/api/leasecomps", leaseData);
-	},
+	}
+	// ,
+	// createLease: function(leaseData) {
+	// 	return axios.post("/api/leasecomps", leaseData);
+	// },
 	// ...
 	// // SALES API DATA // //
 	getSales: function() {
