@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Main from "./components/pages/Main";
 import Search from "./components/pages/Search";
@@ -7,9 +6,9 @@ import Property from "./components/pages/Property";
 import Profile from "./components/pages/Profile/Profile";
 import UserProfile from "./components/pages/UserProfile/UserProfile";
 import Import from "./components/pages/Import";
-import SideNav from "./components/SideNav/SideNav";
 import Navbar from "./components/Navbar/Navbar";
 import Login from './components/Login';
+import API from './utils/api'
 import Logout from './components/Logout';
 import { app, base } from './base';
 
@@ -54,38 +53,85 @@ class App extends Component {
       this.state = {
         authenticated: false,
         currentUser: null,
-        uid : ""
+        currentUserInfo: null
       };
     }
   
   
     setCurrentUser(user) {
       if (user) {
-        this.setState({
-          currentUser: user,
-          authenticated: true
-        })
+        console.log("setCurrentUser",user);
+        // this.setState({
+        //   currentUser: user,
+        //   authenticated: true
+        // })
+        this.getUserInfoFromDataBase(user);
         console.log("we logged in");
       } else {
         this.setState({
           currentUser: null,
-          authenticated: false
+          authenticated: false,
+          currentUserInfo: null
         })
       }
+    }
+
+    getUserInfoFromDataBase(user) {
+      console.log(user,user.email)
+      API.getUserByEmail(user.email)
+        .then(res => {
+          console.log("found user", user.email, res, res.data)
+          if(res.data.length > 0){
+            console.log("Data Found")
+            this.setState({ 
+              currentUserInfo: res.data,
+              authenticated: true,
+              currentUser: user
+            })
+          }else {
+            console.log("No Data found")
+            const newUser = {accountEmail: user.email, accountId: user.uid}
+            this.addUserToDataBase(newUser, user);
+          }
+          
+          // if (!res.data.accountId) {
+            
+          // }
+        })
+        .catch(err => {
+          console.log("Did not find USER",err)
+          const newUser = {accountEmail: user.email, accountId: user.uid}
+          this.addUserToDataBase(newUser, user);
+        })
+    }
+
+    addUserToDataBase(newUser, fbUserData) {
+      API.createUser(newUser)
+        .then( (res)=> {
+          console.log("New USER", res)
+          this.setState({ 
+            authenticated: true,
+            currentUser: fbUserData
+          })
+          console.log(res,"New User Added to DB!")
+        })
+        .catch(err => console.log(err))
     }
   
     componentWillMount() {
       this.removeAuthUser = app.auth().onAuthStateChanged((user) => {
         if (user) {
-          this.setState({
-            authenticated: true,
-            currentUser: user,
-          })
-  
+          console.log("componentWillMount",user, user.email);
+          this.getUserInfoFromDataBase(user);
+          // this.setState({
+          //   currentUser: user,
+          //   authenticated: true
+          // })
         } else {
           this.setState({
             authenticated: false,
             currentUser: null,
+            currentUserInfo: null
           })
         }
       })
@@ -119,7 +165,7 @@ class App extends Component {
                 <Route exact path="/login" render={(props) => {
                   return <Login setCurrentUser={this.setCurrentUser} {...props} />
                 }} />
-                <Route exact path="/logout" component={Main} />
+                <Route exact path="/logout" component={Logout} />
 
         </div>
 

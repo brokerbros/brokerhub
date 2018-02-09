@@ -32,6 +32,12 @@ export default {
 	// // USER API DATA // //
 	getUsers: function() {
 		return axios.get("/api/users");
+	},
+	getUserByEmail: function(email) {
+		return axios.get("/api/users/email/" + email);
+	},
+	createUser: function(user) {
+		return axios.post("/api/users/", user);
 	}
 
 
