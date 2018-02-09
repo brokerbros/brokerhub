@@ -1,5 +1,5 @@
 .textcolor {
-    color:white;
+    color:black;
 }
 
 .carousel-item {
@@ -9,4 +9,5 @@
 
 .img {
     height:500px;
+    border-width:0;
 }
