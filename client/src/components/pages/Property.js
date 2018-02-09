@@ -17,7 +17,7 @@ class Property extends Component {
       <div className="page-body">
         <div className="topbar-container">
           Property Information
-                </div>
+        </div>
         <div className="property-container container">
           <h1>{this.state.data[0].address}</h1>
           <h3>{this.state.data[0].city}, {this.state.data[0].state} {this.state.data[0].zipcode}</h3>
