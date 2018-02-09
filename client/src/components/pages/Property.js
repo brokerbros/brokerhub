@@ -1,5 +1,5 @@
 import React, {
-    Component
+  Component
 } from "react";
 import CarouselImg from '../CarouselImg';
 import './Property.css';
@@ -7,55 +7,81 @@ import './Property.css';
 import data from "../../testdata.json";
 
 class Property extends Component {
+  state = {
+    data: data,
+    data2: data[0].images
+  };
 
-    //
-    state = {
-        data: data,
-        data2: data[0].images
-    };
-
-    render() {
-        return (
-            <div className="page-body">
-                <div className="topbar-container">
-                    Property Information
+  render() {
+    return (
+      <div className="page-body">
+        <div className="topbar-container">
+          Property Information
                 </div>
-                <div className="property-container">
-                    <h1>{this.state.data[0].address}</h1>
-                    <h3>{this.state.data[0].city}, {this.state.data[0].state} {this.state.data[0].zipcode}</h3>
-                    <hr />
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            {this.state.data.map(item => (
-                                <li data-target="#carouselExampleIndicators" data-slide-to={item.id} class={item.id === 1 ? 'active' : ''}></li>
-                            ))}
-                        </ol>
-                        <div class="carousel-inner">
-                            {this.state.data2.map(item => (
-                                <CarouselImg
-                                    id={item.id}
-                                    name={item.address}
-                                    image={item.image}
-                                    active={item.id === 1 ? 'carousel-item active' : 'carousel-item'}
-                                />
-                            ))}
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <h2>Description</h2>
-                    <p>{this.state.data[0].description}</p>
-                    <h2>Additional Information</h2>
-                </div>
+        <div className="property-container container">
+          <h1>{this.state.data[0].address}</h1>
+          <h3>{this.state.data[0].city}, {this.state.data[0].state} {this.state.data[0].zipcode}</h3>
+          <hr />
+          <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
+            <ol className="carousel-indicators">
+              {this.state.data2.map(item => (
+                <li data-target="#carouselExampleIndicators" data-slide-to={item.id} className={item.id === 1 ? 'active' : ''}></li>
+              ))}
+            </ol>
+            <div className="carousel-inner">
+              {this.state.data2.map(item => (
+                <CarouselImg
+                  id={item.id}
+                  name={item.address}
+                  image={item.image}
+                  active={item.id === 1 ? 'carousel-item active' : 'carousel-item'}
+                />
+              ))}
             </div>
-        );
-    }
+            <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="sr-only">Previous</span>
+            </a>
+            <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="sr-only">Next</span>
+            </a>
+          </div>
+          <div className="container">
+            <h2>Description</h2>
+            <p>{this.state.data[0].description}</p>
+          </div>
+          <div className="container">
+            <h2>Additional Information</h2>
+            <table className="table table-striped table-bordered">
+              <tbody>
+                <tr>
+                  <th><strong>Address</strong></th>
+                  <th>{this.state.data[0].address}</th>
+                </tr>
+                <tr>
+                  <th><strong>City</strong></th>
+                  <th>{this.state.data[0].city}</th>
+                </tr>
+                <tr>
+                  <th><strong>State</strong></th>
+                  <th>{this.state.data[0].state}</th>
+                </tr>
+                <tr>
+                  <th><strong>Zipcode</strong></th>
+                  <th>{this.state.data[0].zipcode}</th>
+                </tr>
+                <tr>
+                  <th><strong>Size</strong></th>
+                  <th>{this.state.data[0].size}</th>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Property;
