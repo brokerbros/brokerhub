@@ -57,16 +57,16 @@ export default {
 	getUsers: function() {
 		return axios.get("/api/users");
 	},
-	getUser: function(id) {
-		return axios.get("/api/users" + id);
+	getUserByEmail: function(email) {
+		return axios.get("/api/users/email/" + email);
 	},
-	updateProperty: function(id) {
+	createUser: function(user) {
+		return axios.post("/api/users/", user);
+	},
+	updateUsers: function(id) {
 		return axios.put("/api/users" + id);
 	},
-	deleteProperty: function(id) {
+	deleteUsers: function(id) {
 		return axios.delete("/api/users" + id);
-	},
-	createProperty: function(userData) {
-		return axios.post("/api/users", userData);
 	}
 };

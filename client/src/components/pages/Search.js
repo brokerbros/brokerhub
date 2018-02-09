@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import { MapContainer } from '../Map'
-import API from "../../utils/API";
+import API from "../../utils/api";
 // import { Col, Row,  Container } from "../Grid";
 import "./main.css";
 import "./map.css";
