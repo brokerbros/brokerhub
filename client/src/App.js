@@ -6,9 +6,9 @@ import Property from "./components/pages/Property";
 import Profile from "./components/pages/Profile/Profile";
 import UserProfile from "./components/pages/UserProfile/UserProfile";
 import Import from "./components/pages/Import";
-import SideNav from "./components/SideNav/SideNav";
 import Navbar from "./components/Navbar/Navbar";
 import Login from './components/Login';
+import API from './utils/api'
 import Logout from './components/Logout';
 import { app, base } from './base';
 
@@ -24,38 +24,86 @@ class App extends Component {
       this.state = {
         authenticated: false,
         currentUser: null,
+        currentUserInfo: null
+
       };
     }
   
   
     setCurrentUser(user) {
       if (user) {
-        this.setState({
-          currentUser: user,
-          authenticated: true
-        })
+        //console.log("setCurrentUser",user);
+        // this.setState({
+        //   currentUser: user,
+        //   authenticated: true
+        // })
+        this.getUserInfoFromDataBase(user);
         console.log("we logged in");
       } else {
         this.setState({
           currentUser: null,
-          authenticated: false
+          authenticated: false,
+          currentUserInfo: null
         })
       }
+    }
+
+    getUserInfoFromDataBase(user) {
+      //console.log(user,user.email)
+      API.getUserByEmail(user.email)
+        .then(res => {
+          console.log("found user", user.email, res, res.data)
+          if(res.data.length > 0){
+            console.log("Data Found")
+            this.setState({ 
+              currentUserInfo: res.data,
+              authenticated: true,
+              currentUser: user
+            })
+          }else {
+            console.log("No Data found")
+            const newUser = {accountEmail: user.email, accountId: user.uid}
+            this.addUserToDataBase(newUser, user);
+          }
+          
+          // if (!res.data.accountId) {
+            
+          // }
+        })
+        .catch(err => {
+          console.log("Did not find USER",err)
+          const newUser = {accountEmail: user.email, accountId: user.uid}
+          this.addUserToDataBase(newUser, user);
+        })
+    }
+
+    addUserToDataBase(newUser, fbUserData) {
+      API.createUser(newUser)
+        .then( (res)=> {
+          //console.log("New USER", res)
+          this.setState({ 
+            authenticated: true,
+            currentUser: fbUserData
+          })
+          console.log(res,"New User Added to DB!")
+        })
+        .catch(err => console.log(err))
     }
   
     componentWillMount() {
       this.removeAuthUser = app.auth().onAuthStateChanged((user) => {
         if (user) {
-          this.setState({
-            authenticated: true,
-            loading: false
-          })
-          console.log(this.state);
+          //console.log("componentWillMount",user, user.email);
+          this.getUserInfoFromDataBase(user);
+          // this.setState({
+          //   currentUser: user,
+          //   authenticated: true
+          // })
         } else {
           this.setState({
             authenticated: false,
-            loading: false
-
+            currentUser: null,
+            currentUserInfo: null
           })
         }
       })
@@ -65,27 +113,30 @@ class App extends Component {
       this.removeAuthUser();
     }
 
+    viewProfile(){
+      if(this.state.authenticated === true){
+        return <Route exact path="/profile" component={UserProfile} />;
+      }
+    }
+
   render() {
   
     return (
       <div style={{maxWidth: "1160px", margin: "0 auto"}}>
-        <Router>
-          <div>
-            <Navbar authenticated={this.state.authenticated} />
-            <Route exact path="/login" render={(props) => {
-              return <Login setCurrentUser={this.setCurrentUser} {...props} />
-                  }} />
-            <Route exact path="/logout" component={Logout} />
-            
-            <Route exact path="/" component={Main} />
-            <Route exact path="/search" component={Search} />
-            <Route exact path="/property" component={Property} />
-            <Route exact path="/profile" component={UserProfile} />
-            <Route exact path="/profile/:id" component={Profile} />
-            <Route exact path="/import" component={Import} />
-
-
-          </div>
+      <Router>
+        <div>
+          <Navbar authenticated={this.state.authenticated} />
+          <Route exact path="/" component={Main} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/property" component={Property} />
+          {this.viewProfile()}
+          <Route exact path="/profile/:id" component={Profile} />
+          <Route exact path="/import" component={Import} />
+          <Route exact path="/login" render={(props) => {
+            return <Login setCurrentUser={this.setCurrentUser} {...props} />
+            }} />
+          <Route exact path="/logout" component={Logout} />
+        </div>
         </Router>
       </div>
     );

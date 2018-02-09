@@ -3,8 +3,27 @@ import { Link } from "react-router-dom";
 import "./Navbar.css"
 import { Position } from '@blueprintjs/core'
 
-
 class Navbar extends Component {
+
+  authenticatedNavImport() {
+    if (this.props.authenticated === true) {
+      return (
+        <li className={window.location.pathname === "/import" ? "active" : ""}>
+          <Link to="/import" className="pt-button pt-minimal">Import File</Link>
+        </li>
+        );
+    }
+  }
+
+  authenticatedNavProfile() {
+    if (this.props.authenticated === true) {
+      return (
+          <li className={window.location.pathname === "/profile" ? "active" : ""}>
+            <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
+          </li>
+        );
+    }
+  }
 
   render() {
      return (
@@ -19,6 +38,7 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/property" ? "active" : ""}>
              <Link to="/property" className="pt-button pt-minimal">Property</Link>
            </li>
+<<<<<<< HEAD
            <li className={window.location.pathname === "/import" ? "active" : ""}>
              <Link to="/import" className="pt-button pt-minimal">Import File</Link>
            </li>
@@ -29,6 +49,10 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/search" ? "active" : ""}>
            <Link to="/search" className="pt-button pt-minimal">Map</Link>
            </li>
+=======
+           {this.authenticatedNavImport()}
+           {this.authenticatedNavProfile()}
+>>>>>>> 3f3638bd7262c81c66f154cf428105467ab21557
            <li className="searchBar">
               <form>
                 <input type="text" placeholder="Search..." />
@@ -56,5 +80,6 @@ class Navbar extends Component {
       );
     }
 }
+
 
 export default Navbar;

@@ -2,12 +2,12 @@
 padding-top:50px;
 top:0;
 right: 0;
-width:600px;
+width: 300px;
 height: 100%;
 position: fixed;
 border-style: solid;
 border-color: black;
 border-width: 10px;
-background-color: yellow;
+background-color: white;
 };
 

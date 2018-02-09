@@ -1,3 +1,13 @@
 .textcolor {
     color:black;
 }
+
+.carousel-item {
+    background-color:#f7f8fb;
+    margin:0;
+}
+
+.img {
+    height:500px;
+    border-width:0;
+}
