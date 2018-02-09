@@ -1,25 +1,11 @@
 import React from "react";
 import "./SideNav.css";
-import Form from "../Form";
+import Form from "../Form/form.js"
+
 
 const SideNav = () =>
 <div id="SideNav">
-	<ul className="nav nav-tabs">
-    	<li className={window.location.pathname === "/" ? "active" : ""}>
-      		<h1>Properties</h1>
-		</li>
-     </ul>
-     <ul className="buttons">
-     	<button onclick="">
-     	A
-		</button>
-		<button onclick="">
-		B
-		</button>
-		<button onclick="">
-		C
-		</button>
-     </ul>
+		<Form />
 </div>
 
 

@@ -1,0 +1,10 @@
+form {
+	position: relative;
+	left:100px;
+}
+
+.picture-container {
+	position: relative;
+	height: 100px;
+	background-color: yellow;
+}
