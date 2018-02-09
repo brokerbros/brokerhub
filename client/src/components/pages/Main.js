@@ -1,13 +1,11 @@
 import React from "react";
-import "./main.css"
-import "./map.css"
-import SideNav from "../SideNav/SideNav";
+import picture from './suburban-family.jpg';
+import SideNav from '../SideNav';
+import "./main.css";
 
 const Main = () =>
-
-  <div className="container" id="map">
-<p> landing page </p>
-  </div>
-
-
+<div>
+<h1 className="Title">Welcome to Brokerhub!</h1>
+<img src={ picture }  />
+</div>
 export default Main;
