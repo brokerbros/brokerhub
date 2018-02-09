@@ -15,9 +15,7 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/" ? "active" : ""}>
              <Link to="/"></Link>
            </li>
-           <li className={window.location.pathname === "/search" ? "active" : ""}>
-           <Link to="/search" className="pt-button pt-minimal">Search</Link>
-           </li>
+
            <li className={window.location.pathname === "/property" ? "active" : ""}>
              <Link to="/property" className="pt-button pt-minimal">Property</Link>
            </li>
@@ -26,6 +24,10 @@ class Navbar extends Component {
            </li>
            <li className={window.location.pathname === "/profile" ? "active" : ""}>
              <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
+           </li>
+
+           <li className={window.location.pathname === "/search" ? "active" : ""}>
+           <Link to="/search" className="pt-button pt-minimal">Map</Link>
            </li>
            <li className="searchBar">
               <form>
@@ -40,9 +42,7 @@ class Navbar extends Component {
         ? (
           <div className="pt-navbar-group pt-align-right">
             <span className="pt-navbar-divider"></span>
-            <button className="pt-button pt-minimal pt-icon-user"></button>
-            <button className="pt-button pt-minimal pt-icon-cog"></button>
-            <Link className="pt-button pt-minimal pt-icon-log-out" to="/logout" aria-label="Log Out"></Link>
+            <Link className="pt-button pt-minimal pt-icon-log-out" to="/logout" aria-label="Log Out">Log Out</Link>
           </div>
         )
           : (
