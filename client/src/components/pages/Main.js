@@ -5,11 +5,7 @@ import "./main.css";
 
 const Main = () =>
 <div>
-
 <h1 className="Title">Welcome to Brokerhub!</h1>
 <img src={ picture }  />
-
-
 </div>
-
 export default Main;
