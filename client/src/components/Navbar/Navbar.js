@@ -38,6 +38,9 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/property" ? "active" : ""}>
              <Link to="/property" className="pt-button pt-minimal">Property</Link>
            </li>
+           <li className={window.location.pathname === "/search" ? "active" : ""}>
+           <Link to="/search" className="pt-button pt-minimal">Map</Link>
+           </li>
            {this.authenticatedNavImport()}
            {this.authenticatedNavProfile()}
            <li className="searchBar">
