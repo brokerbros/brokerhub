@@ -34,7 +34,10 @@ const propertySeed = [
         "image": "https://studious.s3.amazonaws.com/photos/2258-640.jpg",
         "name": "UCLA Building"
       }
-    ]
+    ],
+    squarefeet: 40000,
+    type: "Office",
+    askingrent: 1.45
   },
   {
     latitude: 34.069829,
@@ -63,7 +66,10 @@ const propertySeed = [
         "image": "https://cdn.stacyblackman.com/wp/wp-content/uploads/UCLA-Anderson-Large.jpg",
         "name": "UCLA Anderson School of Management"
       },
-    ]
+    ],
+    squarefeet: 100000,
+    type: "Office",
+    askingrent: 2.45
   },
   {
     latitude: 34.064135,
@@ -92,7 +98,10 @@ const propertySeed = [
         "image": "http://www.lacma.org/sites/default/files/TransformationHeader2_0.jpg",
         "name": "LA County Museum of Art"
       }
-    ]
+    ],
+    squarefeet: 140000,
+    type: "Other",
+    askingrent: 3.45
   },
   {
     latitude: 34.022717,
@@ -121,7 +130,10 @@ const propertySeed = [
         "image": "https://media.nbclosangeles.com/images/1200*675/usc+%5Bgenericsla%5D.jpg",
         "name": "University of Southern California"
       }
-    ]
+    ],
+    squarefeet: 200000,
+    type: "Academic",
+    askingrent: 1.45
   },
   {
     latitude: 33.942850,
@@ -160,7 +172,10 @@ const propertySeed = [
         "image": "http://www.theairport.org/images/lax_airport_advertising_image.jpg",
         "name": "Los Angeles International Airport"
       }
-    ]
+    ],
+    squarefeet: 300000,
+    type: "Office",
+    askingrent: 2.45
   }
 
 ];
