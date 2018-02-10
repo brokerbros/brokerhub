@@ -22,6 +22,7 @@ class Property extends Component {
 
   getID = () => {
     let urlParam = window.location.pathname.split('/');
+    console.log(urlParam);
     this.setState({currentProperty: urlParam[2]});
   }
 
