@@ -1,15 +1,37 @@
 import React, {
   Component
 } from "react";
+
+import API from '../../utils/api.js';
+
 import CarouselImg from '../CarouselImg';
 import './Property.css';
 
-import data from "../../testdata.json";
-
 class Property extends Component {
+
   state = {
-    data: data,
-    data2: data[0].images
+    currentProperty: '',
+    data: [],
+    data2: []
+  };
+
+  componentDidMount() {
+    this.getID();
+    this.loadProperties();
+  }
+
+  getID = () => {
+    let urlParam = window.location.pathname.split('/');
+    this.setState({currentProperty: urlParam[2]});
+  }
+
+  loadProperties = () => {
+    API.getProperty(this.state.currentProperty)
+      .then(res => {
+          return this.setState({data: res.data[this.state.currentProperty], data2: res.data[this.state.currentProperty].images})
+        }
+      )
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -19,8 +41,8 @@ class Property extends Component {
           Property Information
         </div>
         <div className="property-container container">
-          <h1>{this.state.data[0].address}</h1>
-          <h3>{this.state.data[0].city}, {this.state.data[0].state} {this.state.data[0].zipcode}</h3>
+          <h1>{this.state.data.propertyName}</h1>
+          <h3>{this.state.data.address} {this.state.data.city}, {this.state.data.state} {this.state.data.zipcode}</h3>
           <hr />
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
@@ -49,7 +71,7 @@ class Property extends Component {
           </div>
           <div className="container">
             <h2>Description</h2>
-            <p>{this.state.data[0].description}</p>
+            <p>{this.state.data.description}</p>
           </div>
           <div className="container">
             <h2>Additional Information</h2>
@@ -57,23 +79,31 @@ class Property extends Component {
               <tbody>
                 <tr>
                   <th><strong>Address</strong></th>
-                  <th>{this.state.data[0].address}</th>
+                  <th>{this.state.data.address}</th>
                 </tr>
                 <tr>
                   <th><strong>City</strong></th>
-                  <th>{this.state.data[0].city}</th>
+                  <th>{this.state.data.city}</th>
                 </tr>
                 <tr>
                   <th><strong>State</strong></th>
-                  <th>{this.state.data[0].state}</th>
+                  <th>{this.state.data.state}</th>
                 </tr>
                 <tr>
                   <th><strong>Zipcode</strong></th>
-                  <th>{this.state.data[0].zipcode}</th>
+                  <th>{this.state.data.zipcode}</th>
                 </tr>
                 <tr>
-                  <th><strong>Size</strong></th>
-                  <th>{this.state.data[0].size}</th>
+                  <th><strong>Square Feet</strong></th>
+                  <th>{this.state.data.squarefeet}</th>
+                </tr>
+                <tr>
+                  <th><strong>Type</strong></th>
+                  <th>{this.state.data.type}</th>
+                </tr>
+                <tr>
+                  <th><strong>Asking Rent</strong></th>
+                  <th>{this.state.data.askingrent}</th>
                 </tr>
               </tbody>
             </table>
