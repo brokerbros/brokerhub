@@ -41,7 +41,7 @@ class Search extends Component {
 						<List>
 							{this.state.properties.map(property => (
 								<ListItem key={property._id}>
-									<Link to={"/property/" + property._id}>
+									<Link to={"/property/" + property.id}>
 										<h4>{property.propertyName}</h4>
 									</Link>
 								</ListItem>
