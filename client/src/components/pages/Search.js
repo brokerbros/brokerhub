@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import { MapContainer } from '../Map'
 import API from "../../utils/api";
-// import { Col, Row,  Container } from "../Grid";
+import { Col, Row,  Container } from "../Grid";
 import "./main.css";
 import "./map.css";
-import SideNav from "../SideNav/SideNav";
+import { Link } from "react-router-dom";
+import { SideNav } from "../SideNav/SideNav";
+import { List, ListItem } from "../List";
 
 class Search extends Component {
 	state = {
@@ -30,16 +32,25 @@ class Search extends Component {
 		return ( 
 		<div className="container">
 			<div className="row">
-				<div className="col-8">
-				</div>
-			</div>
-			<div className="row">
-				<div className="col-4">
-				</div>
-			</div>
-			<div className="row">
 				<MapContainer />
-				<SideNav />
+				
+			</div>
+			<div className="row">
+				<SideNav>
+					{this.state.properties.length ? (
+						<List>
+							{this.state.properties.map(property => (
+								<ListItem key={property._id}>
+									<Link to={"/property/" + property.id}>
+										<h4>{property.propertyName}</h4>
+									</Link>
+								</ListItem>
+								))}
+						</List>
+						) : (
+						<h3>No Results to Display</h3>
+					)}
+				</SideNav>
 			</div>
 		</div>
 		);

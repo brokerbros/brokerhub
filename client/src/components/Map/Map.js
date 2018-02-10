@@ -1,37 +1,10 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import Marker from './children/Marker';
+import { Link } from "react-router-dom";
 import API from "../../utils/api";
 import InfoWindow from './children/InfoWindow'
 
-const propertySeed = [
-  {
-    latitude: 34.063878,
-    longitude: -118.448450,
-    propertyName: "UCLA Extension"
-  },
-  {
-    latitude: 34.069829,
-    longitude: -118.444737,
-    propertyName: "UCLA Anderson School of Management"
-  },
-  {
-    latitude: 34.064135,
-    longitude: -118.359208,
-    propertyName: "LA County Museum of Art"
-  },
-  {
-    latitude: 34.022717,
-    longitude: -118.284959,
-    propertyName: "University of Southern California"
-  },
-  {
-    latitude: 33.942850,
-    longitude: -118.408206,
-    propertyName: "Los Angeles International Airport"
-  }
-
-];
 
 // Instantiates the Map element with the default requirements.
 export class MapContainer extends React.Component {
@@ -84,7 +57,7 @@ export class MapContainer extends React.Component {
 	render() {
 		const style = {
  			width: '1000px',
-  		height: '100%',
+  			height: '100%',
   			overflow: 'hidden'
 		}
 
@@ -118,16 +91,16 @@ export class MapContainer extends React.Component {
 			}
 
 			<InfoWindow
-					google={this.props.google}
+				google={this.props.google}
 			  	marker={this.state.activeMarker}
 			  	visible={this.state.showingInfoWindow}
 			  	onClose={this.onInfoWindowClose}
 			>
 			   	<div>
-			    	<p>{this.state.selectedPlace.name}
-			    	{this.state.selectedPlace.size}
-			    	{this.state.selectedPlace.type}
-			    	{this.state.selectedPlace.rent}</p>			    
+			    	<h4>{this.state.selectedPlace.name}</h4>
+			    	<p>Size: {this.state.selectedPlace.size} square feet</p>
+			    	<p>Type: {this.state.selectedPlace.type}</p>
+			    	<p>Rent: $ {this.state.selectedPlace.rent}/SF</p>			    
 			    </div>
 			</InfoWindow>
 
