@@ -3,14 +3,36 @@ import "./AccountTab.css"
 
 
 class AccountTab extends Component {
-  // constructor(){
-  //   super()
-  // }
-	  	// state = {
-	//   data,
-	//   name: data.name,
-	//   address: data.address
- //  };
+  constructor(){
+    super()
+    this.state = {
+      userInfo: null
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      userInfo: this.props.currentUserInfo
+    });
+    console.log(this.state.userInfo)
+  }
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+
+    let newVal = this.props.currentUserInfo;
+
+    newVal[name] = value;
+
+    this.props.updateCurrentUserInfo(newVal);    
+  };
+
+  handleInputSave = event => {
+    event.preventDefault();
+    this.props.updateDatabaseUserInfo()
+  }
+
 	render() {
 		return (
 			<section className="account-tab-section">
@@ -26,12 +48,34 @@ class AccountTab extends Component {
           <div className="col-10 col-sm-6">
           	<form className="form-group">
           		<label >Email Address</label>
-					    <input className="form-control" name="new-email" placeholder="email@mail.com" type="email"/>
+					    <input 
+                className="form-control" 
+                name="contactEmail"
+                value={this.props.currentUserInfo.contactEmail}
+                onChange={this.handleInputChange}
+                placeholder="email@mail.com" 
+                type="email"/>
 					    <label >First Name</label>
-					    <input className="form-control" name="new-first-name" placeholder="Adam"/>
+					    <input
+                className="form-control"
+                name="firstName"
+                value={this.props.currentUserInfo.firstName}
+                onChange={this.handleInputChange}
+                placeholder="Adam"
+              />
 					    <label >Last Name</label>
-					    <input className="form-control" name="new-last-name" placeholder="Template"/>
-					    <button className="btn btn-save" type="submit">Save</button>
+					    <input
+                className="form-control"
+                name="lastName"
+                value={this.props.currentUserInfo.lastName}
+                onChange={this.handleInputChange}
+                placeholder="Template"
+              />
+					    <button 
+                className="btn btn-save"
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </form>
           </div>
         </div>

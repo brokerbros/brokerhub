@@ -6,14 +6,10 @@ import PropertiesTab from "../../PropertiesTab";
 
 
 class UserProfile extends Component {
-  // constructor(){
-  //   super()
-  // }
-	  	// state = {
-	//   data,
-	//   name: data.name,
-	//   address: data.address
- //  };
+  constructor(){
+    super()
+  }
+	  	
 	render() {
 		return (
 			<div className="user-profile-page">
@@ -35,10 +31,20 @@ class UserProfile extends Component {
           <div className="col-12 col-sm-9 col-md-10">
             <div className="tab-content" id="nav-tabContent">
               <div className="tab-pane fade show active" id="nav-account" role="tabpanel" aria-labelledby="nav-account-tab">
-                <AccountTab/>
+                <AccountTab 
+                  authenticated={this.props.authenticated} 
+                  currentUserInfo={this.props.currentUserInfo}
+                  updateCurrentUserInfo={this.props.updateCurrentUserInfo}
+                  updateDatabaseUserInfo={this.props.updateDatabaseUserInfo}
+                />
               </div>
               <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                <ProfileTab/>
+                <ProfileTab
+                  authenticated={this.props.authenticated} 
+                  currentUserInfo={this.props.currentUserInfo}
+                  updateCurrentUserInfo={this.props.updateCurrentUserInfo}
+                  updateDatabaseUserInfo={this.props.updateDatabaseUserInfo}
+                />
               </div>
               <div className="tab-pane fade" id="nav-properties" role="tabpanel" aria-labelledby="nav-properties-tab">
                 <PropertiesTab/>

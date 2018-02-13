@@ -63,10 +63,10 @@ export default {
 	createUser: function(user) {
 		return axios.post("/api/users/", user);
 	},
-	updateUsers: function(id) {
-		return axios.put("/api/users" + id);
+	updateUsers: function(id,userData) {
+		return axios.put("/api/users/" + id, userData);
 	},
 	deleteUsers: function(id) {
-		return axios.delete("/api/users" + id);
+		return axios.delete("/api/users/" + id);
 	}
 };
