@@ -142,7 +142,7 @@ class App extends Component {
 
     viewProfile(){
       if(this.state.authenticated === true){
-        return <Route exact path="/profile" render={(props) => {
+        return <Route exact path="/profile/:tab" render={(props) => {
             return (
               <UserProfile 
                 authenticated={this.state.authenticated} 
@@ -166,7 +166,7 @@ class App extends Component {
           <Route exact path="/property/:id" component={Property} />
           <Route exact path="/property" component={Search} />
           {this.viewProfile()}
-          <Route exact path="/profile/:id" component={Profile} />
+          <Route exact path="/profile/view/:id" component={Profile} />
           <Route exact path="/import" component={Import} />
           <Route exact path="/login" render={(props) => {
             return <Login setCurrentUser={this.setCurrentUser} {...props} />

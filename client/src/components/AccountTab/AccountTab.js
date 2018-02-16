@@ -5,17 +5,13 @@ import "./AccountTab.css"
 class AccountTab extends Component {
   constructor(){
     super()
-    this.state = {
-      userInfo: null
-    }
   }
 
-  componentDidMount() {
-    this.setState({
-      userInfo: this.props.currentUserInfo
-    });
-    console.log(this.state.userInfo)
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     userInfo: this.props.currentUserInfo
+  //   });
+  // }
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
@@ -47,7 +43,7 @@ class AccountTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-          		<label >Email Address</label>
+          		<label >Contact Email Address</label>
 					    <input 
                 className="form-control" 
                 name="contactEmail"
@@ -70,6 +66,14 @@ class AccountTab extends Component {
                 value={this.props.currentUserInfo.lastName}
                 onChange={this.handleInputChange}
                 placeholder="Template"
+              />
+              <label >License</label>
+              <input
+                className="form-control"
+                name="licenseNumber"
+                value={this.props.currentUserInfo.licenseNumber}
+                onChange={this.handleInputChange}
+                placeholder="ex. 11111111"
               />
 					    <button 
                 className="btn btn-save"

@@ -22,13 +22,13 @@ var userSchema = new Schema({
 		type: String,
 	},
 	telephone: {
-		type: Number,
+		type: String,
 	},
 	cellphone: {
-		type: Number,
+		type: String,
 	},
 	fax: {
-		type: Number,
+		type: String,
 	},
 	title: {
 		type: String,
@@ -51,10 +51,10 @@ var userSchema = new Schema({
 	education: {
 		type: String,
 	},
-	transationHistory: {
+	transactionHistory: {
 		type: String,
 	},
-	licenceNumber: {
+	licenseNumber: {
 		type: Number,
 	}
 });

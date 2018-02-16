@@ -3,14 +3,26 @@ import "./ProfileTab.css"
 
 
 class ProfileTab extends Component {
-  // constructor(){
-  //   super()
-  // }
-	  	// state = {
-	//   data,
-	//   name: data.name,
-	//   address: data.address
- //  };
+  constructor(){
+    super()
+  }
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+
+    let newVal = this.props.currentUserInfo;
+
+    newVal[name] = value;
+
+    this.props.updateCurrentUserInfo(newVal);    
+  };
+
+  handleInputSave = event => {
+    event.preventDefault();
+    this.props.updateDatabaseUserInfo()
+  }
+
 	render() {
 		return (
 			<section className="account-tab-section">
@@ -26,14 +38,41 @@ class ProfileTab extends Component {
           <div className="col-10 col-sm-6">
           	<form className="form-group">
           		<label >Contact Email</label>
-					    <input className="form-control" name="new-phone" placeholder="ex. myemail@example.com" type="email"/>
+					    <input 
+                className="form-control" 
+                name="contactEmail"
+                value={this.props.currentUserInfo.contactEmail}
+                onChange={this.handleInputChange}
+                placeholder="ex. myemail@example.com" 
+                type="email"
+              />
           		<label >Phone Number</label>
-					    <input className="form-control" name="new-phone" placeholder="ex. (555)-555-5555"/>
+					    <input 
+                className="form-control"
+                name="telephone"
+                value={this.props.currentUserInfo.telephone}
+                onChange={this.handleInputChange}
+                placeholder="ex. (555)-555-5555"/>
 					    <label >Cell Phone Number</label>
-					    <input className="form-control" name="new-cell-phone" placeholder="ex. (555)-555-5555"/>
+					    <input
+                className="form-control"
+                name="cellphone"
+                value={this.props.currentUserInfo.cellphone}
+                onChange={this.handleInputChange}
+                placeholder="ex. (555)-555-5555"/>
 					    <label >Fax Number</label>
-					    <input className="form-control" name="new-fax" placeholder="ex. (555)-555-5555"/>
-					    <button className="btn btn-save" type="submit">Save</button>
+					    <input
+                className="form-control"
+                name="fax"
+                value={this.props.currentUserInfo.fax}
+                onChange={this.handleInputChange}
+                placeholder="ex. (555)-555-5555"
+              />
+					    <button
+                className="btn btn-save" 
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </form>
           </div>
         </div>
@@ -49,10 +88,24 @@ class ProfileTab extends Component {
           <div className="col-10 col-sm-6">
           	<form className="form-group">
           		<label >Title</label>
-					    <input className="form-control" name="new-title" placeholder="ex. Senior Vice President"/>
+					    <input
+                className="form-control"
+                name="title"
+                value={this.props.currentUserInfo.title}
+                onChange={this.handleInputChange}
+                placeholder="ex. Senior Vice President"/>
 					    <label >Location</label>
-					    <input className="form-control" name="new-location" placeholder="ex. HQ - Los Angeles"/>
-					    <button className="btn btn-save" type="submit">Save</button>
+					    <input 
+                className="form-control"
+                name="location"
+                value={this.props.currentUserInfo.location}
+                onChange={this.handleInputChange}
+                placeholder="ex. HQ - Los Angeles"/>
+					    <button
+                className="btn btn-save"
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </form>
           </div>
         </div>
@@ -68,8 +121,18 @@ class ProfileTab extends Component {
           <div className="col-10 col-sm-6">
           	<form className="form-group">
 							<label >Scope of Service Experience</label>
-					    <textarea className="form-control" rows="10" name="new-experience" />
-					    <button className="btn btn-save" type="submit">Save</button>
+					    <textarea
+                className="form-control"
+                name="scopeExperience"
+                value={this.props.currentUserInfo.scopeExperience}
+                onChange={this.handleInputChange}
+                rows="10"
+              />
+              <button 
+                className="btn btn-save"
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </form>
           </div>
         </div>
@@ -85,8 +148,18 @@ class ProfileTab extends Component {
           <div className="col-10 col-sm-6">
           	<form className="form-group">
 					    <label >Background & Experience</label>
-					    <textarea className="form-control" rows="10" name="new-background" />
-					    <button className="btn btn-save" type="submit">Save</button>
+					    <textarea
+                className="form-control"
+                name="background"
+                value={this.props.currentUserInfo.background}
+                onChange={this.handleInputChange}
+                rows="10"
+              />
+              <button 
+                className="btn btn-save"
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </form>
           </div>
         </div>
@@ -102,8 +175,18 @@ class ProfileTab extends Component {
           <form className="col-10 col-sm-6">
           	<div className="form-group">
 					    <label >Education</label>
-					    <textarea className="form-control" rows="10" name="new-education" />
-					    <button className="btn btn-save" type="submit">Save</button>
+					    <textarea
+                className="form-control"
+                name="education"
+                value={this.props.currentUserInfo.education}
+                onChange={this.handleInputChange}
+                rows="10"
+              />
+              <button 
+                className="btn btn-save"
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </div>
           </form>
         </div>
@@ -119,8 +202,18 @@ class ProfileTab extends Component {
           <form className="col-10 col-sm-6">
           	<div className="form-group">
 					    <label >Transaction History</label>
-					    <textarea className="form-control" rows="10" name="new-transaction-history" />
-					    <button className="btn btn-save" type="submit">Save</button>
+					    <textarea
+                className="form-control"
+                name="transactionHistory"
+                value={this.props.currentUserInfo.transactionHistory}
+                onChange={this.handleInputChange}
+                rows="10"
+              />
+              <button 
+                className="btn btn-save"
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </div>
           </form>
         </div>
