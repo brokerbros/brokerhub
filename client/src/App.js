@@ -21,8 +21,8 @@ class App extends Component {
       this.updateDatabaseUserInfo = this.updateDatabaseUserInfo.bind(this);
       this.state = {
         authenticated: false,
-        currentUser: null,
-        currentUserInfo: null
+        currentUser: '',
+        currentUserInfo: ''
 
       };
     }
