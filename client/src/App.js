@@ -155,6 +155,17 @@ class App extends Component {
       }
     }
 
+    viewUserProfile(){
+        return <Route exact path="/profile/view/:id" render={(props) => {
+            return (
+              <Profile 
+                authenticated={this.state.authenticated} 
+                currentUserInfo={this.state.currentUserInfo}
+              />
+            );
+          }} />
+    } 
+
   render() {
     return (
       <div style={{maxWidth: "1160px", margin: "0 auto"}}>
@@ -166,7 +177,7 @@ class App extends Component {
           <Route exact path="/property/:id" component={Property} />
           <Route exact path="/property" component={Search} />
           {this.viewProfile()}
-          <Route exact path="/profile/view/:id" component={Profile} />
+          {this.viewUserProfile()}
           <Route exact path="/import" component={Import} />
           <Route exact path="/login" render={(props) => {
             return <Login setCurrentUser={this.setCurrentUser} {...props} />

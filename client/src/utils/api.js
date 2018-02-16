@@ -60,6 +60,9 @@ export default {
 	getUserByEmail: function(email) {
 		return axios.get("/api/users/email/" + email);
 	},
+	getUserById: function(id) {
+		return axios.get("/api/users/" + id);
+	},
 	createUser: function(user) {
 		return axios.post("/api/users/", user);
 	},

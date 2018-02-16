@@ -28,6 +28,29 @@
 
 }
 
+.profile-link {
+	color: #fff;
+}
+
+.profile-link:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn-view-profile {
+	color: #fff;
+  background-color: #af2d37;
+  border-color: #9b1320;
+  margin-right: 25px;
+}
+
+.btn-view-profile:hover {
+	color: #fff;
+	background-color: #9b1320;
+	border-color: #9b1320;
+	margin-right: 25px;
+}
+
 .nav-tabs {
 	padding-left: 25px;
 

@@ -48,12 +48,36 @@ class UserProfile extends Component {
         );
       }} />
   }
+
+  // showUserProfile() {
+  //   if(this.props.currentUserInfo.id){
+  //         const profileRoute = "/profile/view/" + this.props.currentUserInfo._id;
+  //   return <Redirect to={profileRoute} />;
+  //   }
+
+  // }
 	  	
 	render() {
 		return (
 			<div className="user-profile-page">
-    		<div className="account-header">
+    		<div className="account-header row justify-content-between">
+          <div className="col-6">
           Manage Account
+          </div>
+          <div className="col-6">
+            <button
+              className="btn btn-view-profile float-right" 
+              type="submit"
+              onClick={this.showUserProfile}
+            >
+              <Link
+                className="profile-link" 
+                to={"/profile/view/" + this.props.currentUserInfo._id}
+              >
+              View Profile
+              </Link>
+            </button>
+          </div>
         </div>
         <div className="row justify-content-around">
           <div className="col-12 col-sm-3 col-md-2 col-lg-1">
