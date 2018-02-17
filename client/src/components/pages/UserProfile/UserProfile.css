@@ -17,7 +17,8 @@
 }
 
 .account-nav-link {
-	padding: 10px 20px 10px 0px;
+	padding: 10px 0px 10px 0px;
+	margin: 0px 20px 0px 0px;
 }
 
 .nav-tabs .account-nav-link.active {
@@ -25,6 +26,29 @@
     background-color: #fff;
     border-bottom: 2px solid #af2d37;
 
+}
+
+.profile-link {
+	color: #fff;
+}
+
+.profile-link:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
+.btn-view-profile {
+	color: #fff;
+  background-color: #af2d37;
+  border-color: #9b1320;
+  margin-right: 25px;
+}
+
+.btn-view-profile:hover {
+	color: #fff;
+	background-color: #9b1320;
+	border-color: #9b1320;
+	margin-right: 25px;
 }
 
 .nav-tabs {
