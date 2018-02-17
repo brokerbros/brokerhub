@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Main from "./components/pages/Main";
 import Search from "./components/pages/Search";
 import Property from "./components/pages/Property";
@@ -10,7 +10,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Login from './components/Login';
 import API from './utils/api'
 import Logout from './components/Logout';
-import { app, base } from './base';
+import { app } from './base';
 
 
 class App extends Component {
@@ -89,7 +89,6 @@ class App extends Component {
               title: "",
               location: "",
               specialties: "",
-              title:  "",
               scopeExperience: "",
               background: "",
               education: "",

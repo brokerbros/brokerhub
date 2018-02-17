@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import ReactDOMServer from 'react-dom/server';
 
 export class InfoWindow extends React.Component {
@@ -38,7 +38,8 @@ export class InfoWindow extends React.Component {
   }
 
   renderInfoWindow() {
-    let {map, google, mapCenter} = this.props;
+    //let {map, google, mapCenter} = this.props;
+    let {google} = this.props;
 
     if (!google || !google.maps) {
       return;

@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import "./Profile.css"
 import API from '../../../utils/api'
+import PlaceholderImage from '../../../images/default-placeholder.png'
 
 class Profile extends Component {
   // constructor(){
@@ -42,7 +43,7 @@ class Profile extends Component {
              <p className="brokerTitle">{this.state.viewUser.title}</p>
             </div>
             <div className="col-8 col-sm-5 text-center">
-              <img className="profileImg" src="https://api.naiglobal.com/api/userimages?userId=2227&imageType=profile" alt="Adam Comora"/>
+              <img className="profileImg" src={PlaceholderImage} alt="Placeholder"/>
             </div>
     			</div>
     		</div>
@@ -61,9 +62,9 @@ class Profile extends Component {
             <div className="col-11 col-sm-8 col-md-5 order-1 order-md-2">
               <div className="card">
                 <div className="card-body contact-card">
-                  <h5 className="header">NAI Capital HQ - Encino</h5>
-                  <p className="contact-text">{this.state.viewUser.location}</p>
-                  <p className="contact-text">Encino, California United States 91436</p>
+                  <h5 className="header">{this.state.viewUser.location}</h5>
+                  <p className="contact-text">Address Line 1</p>
+                  <p className="contact-text">Address Line 2</p>
                   <p className="contact-text">T: <span>{this.state.viewUser.telephone}</span></p>
                   <p className="contact-text">C: <span>{this.state.viewUser.cellphone}</span></p>
                   <p className="contact-text">F: <span>{this.state.viewUser.fax}</span></p>
