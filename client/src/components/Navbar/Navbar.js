@@ -34,13 +34,9 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/" ? "active" : ""}>
              <Link to="/"></Link>
            </li>
-<<<<<<< HEAD
-           <li className={window.location.pathname === "/search" ? "active" : ""}>
-           <Link to="/search" className="pt-button pt-minimal">Map</Link>
-           </li>
-=======
 
->>>>>>> 4fb3d3189dc88efd4d0ccd6ee65a7b8c911f67da
+
+
            <li className={window.location.pathname === "/property" ? "active" : ""}>
              <Link to="/property" className="pt-button pt-minimal">Property</Link>
            </li>
