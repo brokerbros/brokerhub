@@ -16,6 +16,7 @@ const propertySeed = [
     latitude: 34.063878,
     longitude: -118.448450,
     propertyName: "UCLA Extension"
+    
   },
   {
     latitude: 34.069829,
