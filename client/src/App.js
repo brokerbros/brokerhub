@@ -12,60 +12,29 @@ import API from './utils/api'
 import Logout from './components/Logout';
 import { app, base } from './base';
 
-function AuthenticatedRoute({component: Component, authenticated, ...rest}) {
-  return (
-    <Route
-      {...rest}
-      render={(props) => authenticated === true
-          ? <Component {...props} {...rest} />
-          : <Redirect to={{pathname: '/login', state: {from: props.location}}} /> } 
-    />
-  )
-}
-
-function ShowRoute({component: Component, items, param, ...rest}) {
-  return (
-    <Route
-      {...rest}
-      render={({match, ...props}) => {
-        if (rest.requireAuth === true && !rest.authenticated) {
-          return (
-            <Redirect to={{pathname: '/login', state: {from: props.location}}} />
-          )
-        }
-
-        const item = items[match.params[param]]
-        if (item) {
-          return <Component item={item} {...props} match={match} {...rest}/>
-        } else {
-          return <h1>Not Found</h1>
-        }
-      }}
-    />
-  )
-}
-
 
 class App extends Component {
     constructor() {
       super();
       this.setCurrentUser = this.setCurrentUser.bind(this);
+      this.updateCurrentUserInfo = this.updateCurrentUserInfo.bind(this);
+      this.updateDatabaseUserInfo = this.updateDatabaseUserInfo.bind(this);
       this.state = {
         authenticated: false,
-        currentUser: null,
-        currentUserInfo: null
+        currentUser: '',
+        currentUserInfo: ''
+
       };
     }
-  
   
     setCurrentUser(user) {
       if (user) {
         //console.log("setCurrentUser",user);
-        // this.setState({
-        //   currentUser: user,
-        //   authenticated: true
-        // })
-        this.getUserInfoFromDataBase(user);
+        this.setState({
+          currentUser: user,
+          authenticated: true
+        })
+        //this.getUserInfoFromDataBase(user);
         console.log("we logged in");
       } else {
         this.setState({
@@ -76,6 +45,23 @@ class App extends Component {
       }
     }
 
+    updateCurrentUserInfo(userInfo) {
+      this.setState({
+        currentUserInfo: userInfo
+      })
+    }
+
+    updateDatabaseUserInfo() {
+      console.log("RUN Database Update")
+      API.updateUsers(this.state.currentUserInfo["_id"],this.state.currentUserInfo)
+        .then(res => {
+          console.log("User Data Updated", res.status)
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+
     getUserInfoFromDataBase(user) {
       //console.log(user,user.email)
       API.getUserByEmail(user.email)
@@ -84,24 +70,37 @@ class App extends Component {
           if(res.data.length > 0){
             console.log("Data Found")
             this.setState({ 
-              currentUserInfo: res.data,
+              currentUserInfo: res.data[0],
               authenticated: true,
               currentUser: user
             })
+            console.log(this.state.currentUserInfo)
           }else {
             console.log("No Data found")
-            const newUser = {accountEmail: user.email, accountId: user.uid}
+            const newUser = {
+              accountEmail: user.email,
+              accountId: user.uid,
+              firstName: "",
+              lastName: "",
+              contactEmail: "",
+              telephone: null,
+              cellphone: null,
+              fax: null,
+              title: "",
+              location: "",
+              specialties: "",
+              title:  "",
+              scopeExperience: "",
+              background: "",
+              education: "",
+              transationHistory: "",
+              licenceNumber: null
+            }
             this.addUserToDataBase(newUser, user);
-          }
-          
-          // if (!res.data.accountId) {
-            
-          // }
+          } 
         })
         .catch(err => {
-          console.log("Did not find USER",err)
-          const newUser = {accountEmail: user.email, accountId: user.uid}
-          this.addUserToDataBase(newUser, user);
+          console.log(err)
         })
     }
 
@@ -143,36 +142,49 @@ class App extends Component {
 
     viewProfile(){
       if(this.state.authenticated === true){
-        return <Route exact path="/profile" component={UserProfile} />;
+        return <Route exact path="/profile/:tab" render={(props) => {
+            return (
+              <UserProfile 
+                authenticated={this.state.authenticated} 
+                currentUserInfo={this.state.currentUserInfo}
+                updateCurrentUserInfo={this.updateCurrentUserInfo}
+                updateDatabaseUserInfo={this.updateDatabaseUserInfo}
+              />
+            );
+          }} />
       }
     }
+
+    viewUserProfile(){
+        return <Route exact path="/profile/view/:id" render={(props) => {
+            return (
+              <Profile 
+                authenticated={this.state.authenticated} 
+                currentUserInfo={this.state.currentUserInfo}
+              />
+            );
+          }} />
+    } 
 
   render() {
     return (
       <div style={{maxWidth: "1160px", margin: "0 auto"}}>
       <Router>
         <div>
-        <Navbar authenticated={this.state.authenticated} />
+          <Navbar authenticated={this.state.authenticated} />
           <Route exact path="/" component={Main} />
           <Route exact path="/search" component={Search} />
-          <Route exact path="/property" component={Property} />
+          <Route exact path="/property/:id" component={Property} />
+          <Route exact path="/property" component={Search} />
           {this.viewProfile()}
-          <Route exact path="/profile/:id" component={Profile} />
+          {this.viewUserProfile()}
           <Route exact path="/import" component={Import} />
-
-
-
-
-                <Route exact path="/login" render={(props) => {
-                  return <Login setCurrentUser={this.setCurrentUser} {...props} />
-                }} />
-                <Route exact path="/logout" component={Logout} />
-
-
+          <Route exact path="/login" render={(props) => {
+            return <Login setCurrentUser={this.setCurrentUser} {...props} />
+            }} />
+          <Route exact path="/logout" component={Logout} />
         </div>
-
-      </Router>
-
+        </Router>
       </div>
     );
   }

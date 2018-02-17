@@ -19,7 +19,7 @@ class Navbar extends Component {
     if (this.props.authenticated === true) {
       return (
           <li className={window.location.pathname === "/profile" ? "active" : ""}>
-            <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
+            <Link to="/profile/account" className="pt-button pt-minimal">Profile</Link>
           </li>
         );
     }
@@ -34,11 +34,18 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/" ? "active" : ""}>
              <Link to="/"></Link>
            </li>
+<<<<<<< HEAD
            <li className={window.location.pathname === "/search" ? "active" : ""}>
            <Link to="/search" className="pt-button pt-minimal">Map</Link>
            </li>
+=======
+
+>>>>>>> 4fb3d3189dc88efd4d0ccd6ee65a7b8c911f67da
            <li className={window.location.pathname === "/property" ? "active" : ""}>
              <Link to="/property" className="pt-button pt-minimal">Property</Link>
+           </li>
+           <li className={window.location.pathname === "/search" ? "active" : ""}>
+           <Link to="/search" className="pt-button pt-minimal">Map</Link>
            </li>
            {this.authenticatedNavImport()}
            {this.authenticatedNavProfile()}
@@ -55,9 +62,7 @@ class Navbar extends Component {
         ? (
           <div className="pt-navbar-group pt-align-right">
             <span className="pt-navbar-divider"></span>
-            <button className="pt-button pt-minimal pt-icon-user"></button>
-            <button className="pt-button pt-minimal pt-icon-cog"></button>
-            <Link className="pt-button pt-minimal pt-icon-log-out" to="/logout" aria-label="Log Out"></Link>
+            <Link className="pt-button pt-minimal pt-icon-log-out" to="/logout" aria-label="Log Out">Log Out</Link>
           </div>
         )
           : (
