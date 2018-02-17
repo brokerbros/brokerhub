@@ -19,7 +19,7 @@ class Navbar extends Component {
     if (this.props.authenticated === true) {
       return (
           <li className={window.location.pathname === "/profile" ? "active" : ""}>
-            <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
+            <Link to="/profile/account" className="pt-button pt-minimal">Profile</Link>
           </li>
         );
     }
