@@ -8,7 +8,6 @@ const Main = () =>
 <div>
 <h1 className="Title">Welcome to Brokerhub!</h1>
 <Parallax />
-<img src={ picture }  />
 </div>
 
 export default Main
