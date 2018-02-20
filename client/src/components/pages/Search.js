@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import { MapContainer } from '../Map'
 import API from "../../utils/api";
-import { Col, Row,  Container } from "../Grid";
+//import { Col, Row,  Container } from "../Grid";
 import "./main.css";
 import "./map.css";
 import { Link } from "react-router-dom";

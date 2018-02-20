@@ -1,17 +1,12 @@
 import React, {Component} from "react";
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Route} from 'react-router-dom';
 import { Link } from "react-router-dom";
 import "./UserProfile.css"
 import AccountTab from "../../AccountTab";
 import ProfileTab from "../../ProfileTab";
 import PropertiesTab from "../../PropertiesTab";
 
-
-
 class UserProfile extends Component {
-  constructor(){
-    super()
-  }
 
   viewAccount(){
     return <Route exact path="/profile/account" render={(props) => {
@@ -43,19 +38,12 @@ class UserProfile extends Component {
     return <Route exact path="/profile/properties" render={(props) => {
         return (
           <div>
+          <PropertiesTab />
           Property information goes here...
           </div>
         );
       }} />
   }
-
-  // showUserProfile() {
-  //   if(this.props.currentUserInfo.id){
-  //         const profileRoute = "/profile/view/" + this.props.currentUserInfo._id;
-  //   return <Redirect to={profileRoute} />;
-  //   }
-
-  // }
 	  	
 	render() {
 		return (
@@ -65,18 +53,13 @@ class UserProfile extends Component {
           Manage Account
           </div>
           <div className="col-6">
-            <button
-              className="btn btn-view-profile float-right" 
-              type="submit"
-              onClick={this.showUserProfile}
-            >
+
               <Link
-                className="profile-link" 
+                className="profile-link btn btn-view-profile float-right" 
                 to={"/profile/view/" + this.props.currentUserInfo._id}
               >
               View Profile
               </Link>
-            </button>
           </div>
         </div>
         <div className="row justify-content-around">
@@ -86,7 +69,7 @@ class UserProfile extends Component {
 
                   <Link 
                     className={window.location.pathname === "/profile/account"? "nav-item account-nav-link active" : "nav-item account-nav-link"} 
-                    to={"/profile/" + "account"}
+                    to={"/profile/account"}
                   >
                   Account
                   </Link>
@@ -95,7 +78,7 @@ class UserProfile extends Component {
 
                   <Link
                     className={window.location.pathname === "/profile/information"? "nav-item account-nav-link active" : "nav-item account-nav-link"} 
-                    to={"/profile/" + "information"}
+                    to={"/profile/information"}
                   >
                     Profile Information
                   </Link>
@@ -103,7 +86,7 @@ class UserProfile extends Component {
                 <div className="w-100 d-none d-md-block"></div>
                   <Link
                     className={window.location.pathname === "/profile/properties"? "nav-item account-nav-link active" : "nav-item account-nav-link"} 
-                    to={"/profile/" + "properties"}
+                    to={"/profile/properties"}
                   >
                     Properties
                   </Link>

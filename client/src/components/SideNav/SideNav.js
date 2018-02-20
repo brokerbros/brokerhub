@@ -1,6 +1,6 @@
 import React from "react";
 import "./SideNav.css";
-import Form from "../Form";
+//import Form from "../Form";
 
 export const SideNav = ({ children }) => {
 	return (

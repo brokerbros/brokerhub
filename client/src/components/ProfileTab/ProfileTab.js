@@ -3,9 +3,6 @@ import "./ProfileTab.css"
 
 
 class ProfileTab extends Component {
-  constructor(){
-    super()
-  }
 
   handleInputChange = event => {
     // Getting the value and name of the input which triggered the change
