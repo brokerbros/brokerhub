@@ -35,6 +35,8 @@ class Navbar extends Component {
              <Link to="/"></Link>
            </li>
 
+
+
            <li className={window.location.pathname === "/property" ? "active" : ""}>
              <Link to="/property" className="pt-button pt-minimal">Property</Link>
            </li>
@@ -46,7 +48,7 @@ class Navbar extends Component {
            <li className="searchBar">
               <form>
                 <input type="text" placeholder="Search..." />
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" onChange={this.handleFormSubmit}/>
               </form>
            </li>
           </ul>

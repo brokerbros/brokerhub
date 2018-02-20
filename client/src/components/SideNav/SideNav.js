@@ -1,5 +1,6 @@
 import React from "react";
 import "./SideNav.css";
+
 //import Form from "../Form";
 
 export const SideNav = ({ children }) => {
@@ -14,7 +15,5 @@ export const SideNav = ({ children }) => {
 	     	{children}
 	     </ul>
 	</div>
-
-
 	)
 }
