@@ -3,10 +3,6 @@ import "./AccountTab.css"
 
 
 class AccountTab extends Component {
-  constructor(){
-    super()
-  }
-
   // componentDidMount() {
   //   this.setState({
   //     userInfo: this.props.currentUserInfo

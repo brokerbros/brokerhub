@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"
-import { Position } from '@blueprintjs/core'
+//import { Position } from '@blueprintjs/core'
 
 class Navbar extends Component {
 

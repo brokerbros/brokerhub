@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 import Marker from './children/Marker';
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import API from "../../utils/api";
 import InfoWindow from './children/InfoWindow'
 
 
 // Instantiates the Map element with the default requirements.
-export class MapContainer extends React.Component {
+export class MapContainer extends Component {
 	constructor() {
 		super()
 		this.onMarkerClick = this.onMarkerClick.bind(this)
