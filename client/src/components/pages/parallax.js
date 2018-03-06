@@ -11,7 +11,7 @@ const Parallax = () => (
                     <div className="form-outer text-center d-flex align-items-center">
                         <div className="container">
                         <Jumbotron>
-                        <h1 className="spacing">What's BrokerHub?</h1>
+                        <h1 className="spacing">{"What's BrokerHub?"}</h1>
                         <p className="spacing">
                         BrokerHub is a web application that can be used to store, display and update real estate information for small to medium sized Real Estate Brokerage firms. 
                         </p>
@@ -57,7 +57,7 @@ const Parallax = () => (
             </div>
             <div className="information" id="discover" data-type="content">
                 
-                <h1 className="header-title">We’re here for you, Let’s talk!</h1>
+                <h1 className="header-title">{"We’re here for you, Let’s talk!"}</h1>
                 <p className="feature-title">
                 1(800)555-5555
                 </p>
