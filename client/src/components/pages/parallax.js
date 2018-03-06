@@ -1,5 +1,5 @@
 import React from "react"; 
-import { Jumbotron, Button, Panel, Grid, Row, Col } from 'react-bootstrap';
+import { Jumbotron, Button, Grid, Row, Col } from 'react-bootstrap';
 import "./Parallax.css";    
 
 const Parallax = () => (
