@@ -48,7 +48,7 @@ class Property extends Component {
           <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
             <ol className="carousel-indicators">
               {this.state.data2.map(item => (
-                <li data-target="#carouselExampleIndicators" data-slide-to={item.id} className={item.id === 1 ? 'active' : ''}></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to={item.id} key={item.id} className={item.id === 1 ? 'active' : ''}></li>
               ))}
             </ol>
             <div className="carousel-inner">
