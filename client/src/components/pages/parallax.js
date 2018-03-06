@@ -4,7 +4,7 @@ import picture from './suburban-family.jpg';
 import "./Parallax.css";    
 
 const Parallax = () => (
-<div className="container">
+<div className="parallax-container">
             <section>
                 <div className="image" data-type="background" data-speed="2">
                 </div>
@@ -18,14 +18,14 @@ const Parallax = () => (
                     </div>
                 </div>
             </section>
-                <div className="container">
+                <div className="parallax-container">
     
                 </div>
             <section>
                 <div className="image" data-type="background" data-speed="7">
                 </div>
                 <div className="stuff" id="discover" data-type="content">
-                    <div className="container" id="bottomDiv">
+                    <div className="parallax-container" id="bottomDiv">
                                         <Jumbotron>
                     <h1>Brokerhub...the BEST option</h1>
                         <p>
