@@ -10,7 +10,7 @@
 }
 
 .account-info-title {
-	color: #af2d37;
+	color: #558cc0;
 	font-size: 16px;
 }
 
@@ -40,12 +40,12 @@
 .btn-save {
 		margin-top: 20px;
     color: #fff;
-    background-color: #af2d37;
-    border-color: #9b1320;
+    background-color: #558cc0;
+    border-color: #36618b;
 }
 
 .btn-save:hover {
     color: #fff;
-    background-color: #9b1320;
-    border-color: #9b1320;
+    background-color: #36618b;
+    border-color: #36618b;
 }

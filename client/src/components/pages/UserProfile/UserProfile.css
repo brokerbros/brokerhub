@@ -22,9 +22,9 @@
 }
 
 .nav-tabs .account-nav-link.active {
-    color: #af2d37;
+    color: #558cc0;
     background-color: #fff;
-    border-bottom: 2px solid #af2d37;
+    border-bottom: 2px solid #558cc0;
 
 }
 
@@ -39,15 +39,15 @@
 
 .btn-view-profile {
 	color: #fff;
-  background-color: #af2d37;
-  border-color: #9b1320;
+  background-color: #558cc0;
+  border-color: #558cc0;
   margin-right: 25px;
 }
 
 .btn-view-profile:hover {
 	color: #fff;
-	background-color: #9b1320;
-	border-color: #9b1320;
+	background-color: #36618b;
+	border-color: #36618b;
 	margin-right: 25px;
 }
 
