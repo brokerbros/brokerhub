@@ -1,5 +1,5 @@
 import React from "react"; 
-import { Grid, Jumbotron, Button } from 'react-bootstrap';
+import { Jumbotron, Button } from 'react-bootstrap';
 import picture from './suburban-family.jpg';
 import "./Parallax.css";    
 
@@ -12,7 +12,7 @@ const Parallax = () => (
                     <div className="form-outer text-center d-flex align-items-center">
                         <div className="container">
                             <div id="form1" className="form-inner">
-                            <img src={ picture }  />
+                            <img src={ picture }  alt="Family Home"/>
                             </div>
                         </div>
                     </div>
@@ -26,15 +26,15 @@ const Parallax = () => (
                 </div>
                 <div className="stuff" id="discover" data-type="content">
                     <div className="parallax-container" id="bottomDiv">
-                                        <Jumbotron>
-                    <h1>Brokerhub...the BEST option</h1>
+                        <Jumbotron>
+                        <h1>Brokerhub...the BEST option</h1>
                         <p>
                    At Brokerhub we care about fulfilling your needs.  That means going the extra mile to make sure you are fully satisfied with our service.
                          </p>
                         <p>
                         <Button bsStyle="primary">Learn more</Button>
                         </p>
-                    </Jumbotron> 
+                        </Jumbotron> 
                     </div> 
                 </div>
             </section>
