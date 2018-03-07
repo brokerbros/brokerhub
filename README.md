@@ -4,13 +4,13 @@
 
 BrokerHub is a web application that can be used to store, display and update real estate information for small to medium sized Real Estate Brokerage firms.
 
-![fruitdropscreenshot](github/brokerhub1.png)
+![brokerhubscreenshot](github/brokerhub1.png)
 
 ### Search by Item or Location
-![fruitdropscreenshot](github/brokerhub2.png)
+![brokerhubscreenshot](github/brokerhub2.png)
 
 ### Create Listings
-![fruitdropscreenshot](github/brokerhub3.png)
+![brokerhubscreenshot](github/brokerhub3.png)
 
 ## Live Link
 
