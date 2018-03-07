@@ -15,10 +15,6 @@ const propertySeed = [
   {
     latitude: 34.063878,
     longitude: -118.448450,
-<<<<<<< HEAD
-    propertyName: "UCLA Extension"
-    
-=======
     propertyName: "UCLA Extension",
     "id": "0",
     "address": "10995 Le Conte Ave.",
@@ -42,7 +38,6 @@ const propertySeed = [
     squarefeet: 40000,
     type: "Office",
     askingrent: 1.45
->>>>>>> 4fb3d3189dc88efd4d0ccd6ee65a7b8c911f67da
   },
   {
     latitude: 34.069829,

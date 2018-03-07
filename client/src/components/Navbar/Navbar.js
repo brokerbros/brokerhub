@@ -34,23 +34,11 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/" ? "active" : ""}>
              <Link to="/"></Link>
            </li>
-
-
-
-           <li className={window.location.pathname === "/property" ? "active" : ""}>
-             <Link to="/property" className="pt-button pt-minimal">Property</Link>
-           </li>
            <li className={window.location.pathname === "/search" ? "active" : ""}>
            <Link to="/search" className="pt-button pt-minimal">Map</Link>
            </li>
            {this.authenticatedNavImport()}
            {this.authenticatedNavProfile()}
-           <li className="searchBar">
-              <form>
-                <input type="text" placeholder="Search..." />
-                <input type="submit" value="Submit" onChange={this.handleFormSubmit}/>
-              </form>
-           </li>
           </ul>
       </div>
       {

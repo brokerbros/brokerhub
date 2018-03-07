@@ -1,5 +1,4 @@
 import React from "react";
-import picture from './suburban-family.jpg';
 //import SideNav from '../SideNav';
 import "./main.css";
 import Parallax from "./Parallax";

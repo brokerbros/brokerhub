@@ -16,15 +16,15 @@ export class MapContainer extends Component {
 
 	state = {
 		showingInfoWindow: false,
-    activeMarker: {},
-    selectedPlace: {},
-    properties: [],
-    latitude: "",
-    longitude: "",
-    propertyName: "",
-    squarefeet: "",
-    type: "",
-    askingrent: ""
+		activeMarker: {},
+		selectedPlace: {},
+		properties: [],
+		latitude: "",
+		longitude: "",
+		propertyName: "",
+		squarefeet: "",
+		type: "",
+		askingrent: ""
 	}
 
 	componentDidMount() {
@@ -55,19 +55,13 @@ export class MapContainer extends Component {
 	}
 
 	render() {
-		const style = {
- 			width: '1000px',
-  			height: '100%',
-  			overflow: 'hidden'
-		}
-
 		if (!this.props.loaded) {
 			return <div>Loading...</div>
 		}
 		return (
 			<Map 
 				google={this.props.google} 
-				style={style}
+				style={{width: '100%', height: '100%', position: 'relative'}}
 				initialCenter={{
 					lat: 34.040363,
 					lng: -118.248691
@@ -79,6 +73,7 @@ export class MapContainer extends Component {
 				this.state.properties.map(property => 
 					<Marker
 						onClick={this.onMarkerClick}
+						style={{width: '100%', height: '100%', position: 'relative'}}
 						_id={property._id}
 						key={property._id}
 						name={ property.propertyName }

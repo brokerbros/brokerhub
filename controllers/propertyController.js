@@ -2,7 +2,6 @@ const db = require("../models");
 
 module.exports = {
   findAll: function(req, res) {
-    console.log(req.query)
     db.Properties
       .find(req.query)
       .then(dbModel => res.json(dbModel))
