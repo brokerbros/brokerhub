@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css"
-import { Position } from '@blueprintjs/core'
+//import { Position } from '@blueprintjs/core'
 
 class Navbar extends Component {
 
@@ -19,7 +19,7 @@ class Navbar extends Component {
     if (this.props.authenticated === true) {
       return (
           <li className={window.location.pathname === "/profile" ? "active" : ""}>
-            <Link to="/profile" className="pt-button pt-minimal">Profile</Link>
+            <Link to="/profile/account" className="pt-button pt-minimal">Profile</Link>
           </li>
         );
     }
@@ -34,21 +34,11 @@ class Navbar extends Component {
            <li className={window.location.pathname === "/" ? "active" : ""}>
              <Link to="/"></Link>
            </li>
-
-           <li className={window.location.pathname === "/property" ? "active" : ""}>
-             <Link to="/property" className="pt-button pt-minimal">Property</Link>
-           </li>
            <li className={window.location.pathname === "/search" ? "active" : ""}>
            <Link to="/search" className="pt-button pt-minimal">Map</Link>
            </li>
            {this.authenticatedNavImport()}
            {this.authenticatedNavProfile()}
-           <li className="searchBar">
-              <form>
-                <input type="text" placeholder="Search..." />
-                <input type="submit" value="Submit" />
-              </form>
-           </li>
           </ul>
       </div>
       {

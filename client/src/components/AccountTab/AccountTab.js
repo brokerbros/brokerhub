@@ -3,14 +3,28 @@ import "./AccountTab.css"
 
 
 class AccountTab extends Component {
-  // constructor(){
-  //   super()
+  // componentDidMount() {
+  //   this.setState({
+  //     userInfo: this.props.currentUserInfo
+  //   });
   // }
-	  	// state = {
-	//   data,
-	//   name: data.name,
-	//   address: data.address
- //  };
+
+  handleInputChange = event => {
+    // Getting the value and name of the input which triggered the change
+    const { name, value } = event.target;
+
+    let newVal = this.props.currentUserInfo;
+
+    newVal[name] = value;
+
+    this.props.updateCurrentUserInfo(newVal);    
+  };
+
+  handleInputSave = event => {
+    event.preventDefault();
+    this.props.updateDatabaseUserInfo()
+  }
+
 	render() {
 		return (
 			<section className="account-tab-section">
@@ -25,13 +39,43 @@ class AccountTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-          		<label for="new-email">Email Address</label>
-					    <input className="form-control" name="new-email" placeholder="email@mail.com" type="email"/>
-					    <label for="new-first-name">First Name</label>
-					    <input className="form-control" name="new-first-name" placeholder="Adam"/>
-					    <label for="new-last-name">Last Name</label>
-					    <input className="form-control" name="new-last-name" placeholder="Template"/>
-					    <button className="btn btn-save" type="submit">Save</button>
+          		<label >Contact Email Address</label>
+					    <input 
+                className="form-control" 
+                name="contactEmail"
+                value={this.props.currentUserInfo.contactEmail}
+                onChange={this.handleInputChange}
+                placeholder="email@mail.com" 
+                type="email"/>
+					    <label >First Name</label>
+					    <input
+                className="form-control"
+                name="firstName"
+                value={this.props.currentUserInfo.firstName}
+                onChange={this.handleInputChange}
+                placeholder="Adam"
+              />
+					    <label >Last Name</label>
+					    <input
+                className="form-control"
+                name="lastName"
+                value={this.props.currentUserInfo.lastName}
+                onChange={this.handleInputChange}
+                placeholder="Template"
+              />
+              <label >License</label>
+              <input
+                className="form-control"
+                name="licenseNumber"
+                value={this.props.currentUserInfo.licenseNumber}
+                onChange={this.handleInputChange}
+                placeholder="ex. 11111111"
+              />
+					    <button 
+                className="btn btn-save"
+                type="submit"
+                onClick={this.handleInputSave}
+              >Save</button>
 					  </form>
           </div>
         </div>
@@ -46,12 +90,12 @@ class AccountTab extends Component {
           </div>
           <div className="col-10 col-sm-6">
           	<form className="form-group">
-          		<label for="current-password">Current Password</label>
+          		<label >Current Password</label>
 					    <input className="form-control current-password" name="current-password" type="password" placeholder="Enter your current password"/>
 					    <div className="form-separator"/>
-					    <label for="new-password">New Password</label>
+					    <label >New Password</label>
 					    <input className="form-control" name="new-password" type="password" placeholder="Enter a new password"/>
-					    <label for="new-confirm-password">Confirm Password</label>
+					    <label >Confirm Password</label>
 					    <input className="form-control" name="new-confirm-password" type="password" placeholder="Enter the password again"/>
 					    <button className="btn btn-save" type="submit">Change</button>
 					  </form>
