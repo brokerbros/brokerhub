@@ -6,10 +6,10 @@ BrokerHub is a web application that can be used to store, display and update rea
 
 ![brokerhubscreenshot](github/brokerhub1.png)
 
-### Search by Item or Location
+### View Listings in Map
 ![brokerhubscreenshot](github/brokerhub2.png)
 
-### Create Listings
+### Manage User Account Information
 ![brokerhubscreenshot](github/brokerhub3.png)
 
 ## Live Link
