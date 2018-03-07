@@ -19,11 +19,9 @@ class Profile extends Component {
 
   loadProfile = () => {
     let urlParam = window.location.pathname.split('/');
-    console.log(urlParam);
     if (urlParam[3]) {
       API.getUserById(urlParam[3])
         .then(res => {
-          console.log(res.data)
           return this.setState({viewUser: res.data})
         })
         .catch(err => console.log(err));
