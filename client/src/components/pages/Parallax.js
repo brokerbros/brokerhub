@@ -55,7 +55,7 @@ const Parallax = () => (
             <div className="information" id="discover" data-type="content">
                 <h1 className="header-title">{"We’re here for you, Let’s talk!"}</h1>
                 <p className="feature-title">
-                1(800)555-5555
+                {"1(800)555-5555"}
                 </p>
             </div>
         </section>       
