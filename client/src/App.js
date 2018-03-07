@@ -29,13 +29,10 @@ class App extends Component {
   
     setCurrentUser(user) {
       if (user) {
-        //console.log("setCurrentUser",user);
         this.setState({
           currentUser: user,
           authenticated: true
         })
-        //this.getUserInfoFromDataBase(user);
-        console.log("we logged in");
       } else {
         this.setState({
           currentUser: null,
@@ -52,10 +49,9 @@ class App extends Component {
     }
 
     updateDatabaseUserInfo() {
-      console.log("RUN Database Update")
       API.updateUsers(this.state.currentUserInfo["_id"],this.state.currentUserInfo)
         .then(res => {
-          console.log("User Data Updated", res.status)
+          //console.log("User Data Updated", res.status)
         })
         .catch(err => {
           console.log(err)
@@ -63,20 +59,15 @@ class App extends Component {
     }
 
     getUserInfoFromDataBase(user) {
-      //console.log(user,user.email)
       API.getUserByEmail(user.email)
         .then(res => {
-          console.log("found user", user.email, res, res.data)
           if(res.data.length > 0){
-            console.log("Data Found")
             this.setState({ 
               currentUserInfo: res.data[0],
               authenticated: true,
               currentUser: user
             })
-            console.log(this.state.currentUserInfo)
           }else {
-            console.log("No Data found")
             const newUser = {
               accountEmail: user.email,
               accountId: user.uid,
@@ -106,12 +97,10 @@ class App extends Component {
     addUserToDataBase(newUser, fbUserData) {
       API.createUser(newUser)
         .then( (res)=> {
-          //console.log("New USER", res)
           this.setState({ 
             authenticated: true,
             currentUser: fbUserData
           })
-          console.log(res,"New User Added to DB!")
         })
         .catch(err => console.log(err))
     }
@@ -119,7 +108,6 @@ class App extends Component {
     componentWillMount() {
       this.removeAuthUser = app.auth().onAuthStateChanged((user) => {
         if (user) {
-          //console.log("componentWillMount",user, user.email);
           this.getUserInfoFromDataBase(user);
           // this.setState({
           //   currentUser: user,
@@ -167,7 +155,6 @@ class App extends Component {
 
   render() {
     return (
-      <div style={{maxWidth: "1160px", margin: "0 auto"}}>
       <Router>
         <div>
           <Navbar authenticated={this.state.authenticated} />
@@ -184,7 +171,6 @@ class App extends Component {
           <Route exact path="/logout" component={Logout} />
         </div>
         </Router>
-      </div>
     );
   }
 }
